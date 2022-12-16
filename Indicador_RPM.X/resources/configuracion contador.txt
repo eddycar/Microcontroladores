@@ -1,0 +1,7 @@
+INTEDG 	Registro para configurar el flanco de activación
+
+INTF  Registro se establece cuando sucede la interrupción por cambio de estado
+
+INTE  Registro para habilitar/ deshabilitar la interrupcion por cambio de estado	
+
+GIE Registro para hablitar o desabilitar las interrupciones globales.

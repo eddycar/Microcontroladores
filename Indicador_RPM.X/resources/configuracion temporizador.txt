@@ -1,0 +1,17 @@
+INTCON
+GIE Registro para hablitar o desabilitar las interrupciones globales.
+T0IE Registro para habilitar la interrupción del timer0
+T0IF Registro que se pone en alto cuando se desborda el timer0
+
+OPTION_REG
+
+T0CS Registro para seleccionar la fuente de oscilador para temporizador deber ser 0
+PSA Registro para configurar si el preescaler se asigna al timer0 o al WDT
+
+PS0
+PS1  Registros para seleccionar el valor del preescaler
+
+
+
+
+
