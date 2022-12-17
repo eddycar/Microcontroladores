@@ -1,0 +1,14 @@
+Module Master Synchronous Serial Port (MSSP)
+status register (SSPSTAT).
+control registers (SSPCON1 and SSPCON2).
+
+REGISTERS FROM SPI MODE
+
+The MSSP module has four registers for SPI mode
+operation. These are:
+• MSSP Control Register 1 (SSPCON1)
+• MSSP Status Register (SSPSTAT)
+• Serial Receive/Transmit Buffer Register
+(SSPBUF)
+• MSSP Shift Register (SSPSR) – Not directly
+accessible
