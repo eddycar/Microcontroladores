@@ -1,0 +1,1940 @@
+
+
+Microchip MPLAB XC8 Assembler V2.40 build 20220703182018 
+                                                                                               Fri Dec 23 16:20:24 2022
+
+Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1 
+     1                           	processor	18F4550
+     2                           	fnconf	rparam,??,?,0
+     3                           	pagewidth 120
+     4                           	opt	flic
+     5                           	psect	idataCOMRAM,global,class=CODE,delta=1,noexec
+     6                           	psect	mediumconst,global,reloc=2,class=MEDIUMCONST,delta=1,noexec
+     7                           	psect	cinit,global,reloc=2,class=CODE,delta=1
+     8                           	psect	bssCOMRAM,global,class=COMRAM,space=1,delta=1,lowdata,noexec
+     9                           	psect	dataCOMRAM,global,class=COMRAM,space=1,delta=1,lowdata,noexec
+    10                           	psect	cstackCOMRAM,global,class=COMRAM,space=1,delta=1,lowdata,noexec
+    11                           	psect	text0,global,reloc=2,class=CODE,delta=1
+    12                           	psect	text1,global,reloc=2,class=CODE,delta=1
+    13                           	psect	text2,global,reloc=2,class=CODE,delta=1
+    14                           	psect	text3,global,reloc=2,class=CODE,delta=1
+    15                           	psect	text4,global,reloc=2,class=CODE,delta=1
+    16                           	psect	text5,global,reloc=2,class=CODE,delta=1
+    17                           	psect	text6,global,reloc=2,class=CODE,delta=1
+    18                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1,noexec
+    19                           	psect	rparam,global,class=COMRAM,space=1,delta=1,noexec
+    20                           	psect	idloc,global,abs,ovrld,class=IDLOC,space=5,delta=1,noexec
+    21                           	psect	config,global,abs,ovrld,class=CONFIG,space=4,delta=1,noexec
+    22   000000                     
+    23                           ; Version 2.40
+    24                           ; Generated 17/11/2021 GMT
+    25                           ; 
+    26                           ; Copyright © 2021, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    27                           ; All rights reserved.
+    28                           ; 
+    29                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    30                           ; 
+    31                           ; Redistribution and use in source and binary forms, with or without modification, are
+    32                           ; permitted provided that the following conditions are met:
+    33                           ; 
+    34                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    35                           ;        conditions and the following disclaimer.
+    36                           ; 
+    37                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    38                           ;        of conditions and the following disclaimer in the documentation and/or other
+    39                           ;        materials provided with the distribution. Publication is not required when
+    40                           ;        this file is used in an embedded application.
+    41                           ; 
+    42                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    43                           ;        software without specific prior written permission.
+    44                           ; 
+    45                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    46                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    47                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    48                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    49                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    50                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    51                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    52                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    53                           ; 
+    54                           ; 
+    55                           ; Code-generator required, PIC18F4550 Definitions
+    56                           ; 
+    57                           ; SFR Addresses
+    58   000000                     
+    59                           	psect	idataCOMRAM
+    60   007B27                     __pidataCOMRAM:
+    61                           	callstack 0
+    62                           
+    63                           ;initializer for _n_matrices
+    64   007B27  02                 	db	2
+    65                           
+    66                           	psect	mediumconst
+    67   007CF6                     __pmediumconst:
+    68                           	callstack 0
+    69   007CF6  00                 	db	0
+    70   007CF7                     _symbol:
+    71                           	callstack 0
+    72   007CF7  00                 	db	0
+    73   007CF8  00                 	db	0
+    74   007CF9  00                 	db	0
+    75   007CFA  00                 	db	0
+    76   007CFB  00                 	db	0
+    77   007CFC  00                 	db	0
+    78   007CFD  00                 	db	0
+    79   007CFE  00                 	db	0
+    80   007CFF  00                 	db	0
+    81   007D00  00                 	db	0
+    82   007D01  00                 	db	0
+    83   007D02  5F                 	db	95
+    84   007D03  5F                 	db	95
+    85   007D04  00                 	db	0
+    86   007D05  00                 	db	0
+    87   007D06  00                 	db	0
+    88   007D07  00                 	db	0
+    89   007D08  07                 	db	7
+    90   007D09  07                 	db	7
+    91   007D0A  00                 	db	0
+    92   007D0B  00                 	db	0
+    93   007D0C  07                 	db	7
+    94   007D0D  07                 	db	7
+    95   007D0E  00                 	db	0
+    96   007D0F  24                 	db	36
+    97   007D10  7E                 	db	126
+    98   007D11  7E                 	db	126
+    99   007D12  24                 	db	36
+   100   007D13  7E                 	db	126
+   101   007D14  7E                 	db	126
+   102   007D15  24                 	db	36
+   103   007D16  00                 	db	0
+   104   007D17  00                 	db	0
+   105   007D18  24                 	db	36
+   106   007D19  2E                 	db	46
+   107   007D1A  6B                 	db	107
+   108   007D1B  6B                 	db	107
+   109   007D1C  3A                 	db	58
+   110   007D1D  12                 	db	18
+   111   007D1E  00                 	db	0
+   112   007D1F  00                 	db	0
+   113   007D20  66                 	db	102
+   114   007D21  36                 	db	54
+   115   007D22  18                 	db	24
+   116   007D23  0C                 	db	12
+   117   007D24  66                 	db	102
+   118   007D25  62                 	db	98
+   119   007D26  00                 	db	0
+   120   007D27  30                 	db	48
+   121   007D28  7A                 	db	122
+   122   007D29  4F                 	db	79
+   123   007D2A  5D                 	db	93
+   124   007D2B  37                 	db	55
+   125   007D2C  72                 	db	114
+   126   007D2D  50                 	db	80
+   127   007D2E  00                 	db	0
+   128   007D2F  00                 	db	0
+   129   007D30  00                 	db	0
+   130   007D31  00                 	db	0
+   131   007D32  07                 	db	7
+   132   007D33  07                 	db	7
+   133   007D34  00                 	db	0
+   134   007D35  00                 	db	0
+   135   007D36  00                 	db	0
+   136   007D37  00                 	db	0
+   137   007D38  00                 	db	0
+   138   007D39  00                 	db	0
+   139   007D3A  3E                 	db	62
+   140   007D3B  7F                 	db	127
+   141   007D3C  63                 	db	99
+   142   007D3D  41                 	db	65
+   143   007D3E  00                 	db	0
+   144   007D3F  00                 	db	0
+   145   007D40  41                 	db	65
+   146   007D41  63                 	db	99
+   147   007D42  7F                 	db	127
+   148   007D43  3E                 	db	62
+   149   007D44  00                 	db	0
+   150   007D45  00                 	db	0
+   151   007D46  00                 	db	0
+   152   007D47  08                 	db	8
+   153   007D48  2A                 	db	42
+   154   007D49  3E                 	db	62
+   155   007D4A  1C                 	db	28
+   156   007D4B  1C                 	db	28
+   157   007D4C  3E                 	db	62
+   158   007D4D  2A                 	db	42
+   159   007D4E  08                 	db	8
+   160   007D4F  00                 	db	0
+   161   007D50  08                 	db	8
+   162   007D51  08                 	db	8
+   163   007D52  3E                 	db	62
+   164   007D53  3E                 	db	62
+   165   007D54  08                 	db	8
+   166   007D55  08                 	db	8
+   167   007D56  00                 	db	0
+   168   007D57  00                 	db	0
+   169   007D58  80                 	db	128
+   170   007D59  E0                 	db	224
+   171   007D5A  60                 	db	96
+   172   007D5B  00                 	db	0
+   173   007D5C  00                 	db	0
+   174   007D5D  00                 	db	0
+   175   007D5E  00                 	db	0
+   176   007D5F  00                 	db	0
+   177   007D60  08                 	db	8
+   178   007D61  08                 	db	8
+   179   007D62  08                 	db	8
+   180   007D63  08                 	db	8
+   181   007D64  08                 	db	8
+   182   007D65  08                 	db	8
+   183   007D66  00                 	db	0
+   184   007D67  00                 	db	0
+   185   007D68  00                 	db	0
+   186   007D69  00                 	db	0
+   187   007D6A  60                 	db	96
+   188   007D6B  60                 	db	96
+   189   007D6C  00                 	db	0
+   190   007D6D  00                 	db	0
+   191   007D6E  00                 	db	0
+   192   007D6F  00                 	db	0
+   193   007D70  60                 	db	96
+   194   007D71  30                 	db	48
+   195   007D72  18                 	db	24
+   196   007D73  0C                 	db	12
+   197   007D74  06                 	db	6
+   198   007D75  03                 	db	3
+   199   007D76  00                 	db	0
+   200   007D77  00                 	db	0
+   201   007D78  3E                 	db	62
+   202   007D79  7F                 	db	127
+   203   007D7A  49                 	db	73
+   204   007D7B  45                 	db	69
+   205   007D7C  7F                 	db	127
+   206   007D7D  3E                 	db	62
+   207   007D7E  00                 	db	0
+   208   007D7F  00                 	db	0
+   209   007D80  40                 	db	64
+   210   007D81  42                 	db	66
+   211   007D82  7F                 	db	127
+   212   007D83  7F                 	db	127
+   213   007D84  40                 	db	64
+   214   007D85  40                 	db	64
+   215   007D86  00                 	db	0
+   216   007D87  00                 	db	0
+   217   007D88  42                 	db	66
+   218   007D89  63                 	db	99
+   219   007D8A  71                 	db	113
+   220   007D8B  59                 	db	89
+   221   007D8C  4F                 	db	79
+   222   007D8D  46                 	db	70
+   223   007D8E  00                 	db	0
+   224   007D8F  00                 	db	0
+   225   007D90  21                 	db	33
+   226   007D91  61                 	db	97
+   227   007D92  45                 	db	69
+   228   007D93  4F                 	db	79
+   229   007D94  7B                 	db	123
+   230   007D95  31                 	db	49
+   231   007D96  00                 	db	0
+   232   007D97  00                 	db	0
+   233   007D98  18                 	db	24
+   234   007D99  1C                 	db	28
+   235   007D9A  16                 	db	22
+   236   007D9B  7F                 	db	127
+   237   007D9C  7F                 	db	127
+   238   007D9D  10                 	db	16
+   239   007D9E  00                 	db	0
+   240   007D9F  00                 	db	0
+   241   007DA0  27                 	db	39
+   242   007DA1  67                 	db	103
+   243   007DA2  45                 	db	69
+   244   007DA3  45                 	db	69
+   245   007DA4  7D                 	db	125
+   246   007DA5  39                 	db	57
+   247   007DA6  00                 	db	0
+   248   007DA7  00                 	db	0
+   249   007DA8  3E                 	db	62
+   250   007DA9  7F                 	db	127
+   251   007DAA  49                 	db	73
+   252   007DAB  49                 	db	73
+   253   007DAC  79                 	db	121
+   254   007DAD  30                 	db	48
+   255   007DAE  00                 	db	0
+   256   007DAF  00                 	db	0
+   257   007DB0  01                 	db	1
+   258   007DB1  71                 	db	113
+   259   007DB2  79                 	db	121
+   260   007DB3  0D                 	db	13
+   261   007DB4  07                 	db	7
+   262   007DB5  03                 	db	3
+   263   007DB6  00                 	db	0
+   264   007DB7  00                 	db	0
+   265   007DB8  36                 	db	54
+   266   007DB9  7F                 	db	127
+   267   007DBA  49                 	db	73
+   268   007DBB  49                 	db	73
+   269   007DBC  7F                 	db	127
+   270   007DBD  36                 	db	54
+   271   007DBE  00                 	db	0
+   272   007DBF  00                 	db	0
+   273   007DC0  06                 	db	6
+   274   007DC1  4F                 	db	79
+   275   007DC2  49                 	db	73
+   276   007DC3  69                 	db	105
+   277   007DC4  3F                 	db	63
+   278   007DC5  1E                 	db	30
+   279   007DC6  00                 	db	0
+   280   007DC7  00                 	db	0
+   281   007DC8  00                 	db	0
+   282   007DC9  00                 	db	0
+   283   007DCA  36                 	db	54
+   284   007DCB  36                 	db	54
+   285   007DCC  00                 	db	0
+   286   007DCD  00                 	db	0
+   287   007DCE  00                 	db	0
+   288   007DCF  00                 	db	0
+   289   007DD0  00                 	db	0
+   290   007DD1  40                 	db	64
+   291   007DD2  76                 	db	118
+   292   007DD3  36                 	db	54
+   293   007DD4  00                 	db	0
+   294   007DD5  00                 	db	0
+   295   007DD6  00                 	db	0
+   296   007DD7  00                 	db	0
+   297   007DD8  00                 	db	0
+   298   007DD9  08                 	db	8
+   299   007DDA  1C                 	db	28
+   300   007DDB  36                 	db	54
+   301   007DDC  63                 	db	99
+   302   007DDD  41                 	db	65
+   303   007DDE  00                 	db	0
+   304   007DDF  00                 	db	0
+   305   007DE0  24                 	db	36
+   306   007DE1  24                 	db	36
+   307   007DE2  24                 	db	36
+   308   007DE3  24                 	db	36
+   309   007DE4  24                 	db	36
+   310   007DE5  24                 	db	36
+   311   007DE6  00                 	db	0
+   312   007DE7  00                 	db	0
+   313   007DE8  41                 	db	65
+   314   007DE9  63                 	db	99
+   315   007DEA  36                 	db	54
+   316   007DEB  1C                 	db	28
+   317   007DEC  08                 	db	8
+   318   007DED  00                 	db	0
+   319   007DEE  00                 	db	0
+   320   007DEF  00                 	db	0
+   321   007DF0  02                 	db	2
+   322   007DF1  03                 	db	3
+   323   007DF2  51                 	db	81
+   324   007DF3  59                 	db	89
+   325   007DF4  0F                 	db	15
+   326   007DF5  06                 	db	6
+   327   007DF6  00                 	db	0
+   328   007DF7  00                 	db	0
+   329   007DF8  3E                 	db	62
+   330   007DF9  7F                 	db	127
+   331   007DFA  41                 	db	65
+   332   007DFB  5D                 	db	93
+   333   007DFC  57                 	db	87
+   334   007DFD  5E                 	db	94
+   335   007DFE  00                 	db	0
+   336   007DFF  00                 	db	0
+   337   007E00  7C                 	db	124
+   338   007E01  7E                 	db	126
+   339   007E02  13                 	db	19
+   340   007E03  13                 	db	19
+   341   007E04  7E                 	db	126
+   342   007E05  7C                 	db	124
+   343   007E06  00                 	db	0
+   344   007E07  00                 	db	0
+   345   007E08  7F                 	db	127
+   346   007E09  7F                 	db	127
+   347   007E0A  49                 	db	73
+   348   007E0B  49                 	db	73
+   349   007E0C  7F                 	db	127
+   350   007E0D  36                 	db	54
+   351   007E0E  00                 	db	0
+   352   007E0F  00                 	db	0
+   353   007E10  3E                 	db	62
+   354   007E11  7F                 	db	127
+   355   007E12  41                 	db	65
+   356   007E13  41                 	db	65
+   357   007E14  63                 	db	99
+   358   007E15  22                 	db	34
+   359   007E16  00                 	db	0
+   360   007E17  00                 	db	0
+   361   007E18  7F                 	db	127
+   362   007E19  7F                 	db	127
+   363   007E1A  41                 	db	65
+   364   007E1B  63                 	db	99
+   365   007E1C  3E                 	db	62
+   366   007E1D  1C                 	db	28
+   367   007E1E  00                 	db	0
+   368   007E1F  00                 	db	0
+   369   007E20  7F                 	db	127
+   370   007E21  7F                 	db	127
+   371   007E22  49                 	db	73
+   372   007E23  49                 	db	73
+   373   007E24  49                 	db	73
+   374   007E25  41                 	db	65
+   375   007E26  00                 	db	0
+   376   007E27  00                 	db	0
+   377   007E28  7F                 	db	127
+   378   007E29  7F                 	db	127
+   379   007E2A  09                 	db	9
+   380   007E2B  09                 	db	9
+   381   007E2C  09                 	db	9
+   382   007E2D  01                 	db	1
+   383   007E2E  00                 	db	0
+   384   007E2F  00                 	db	0
+   385   007E30  3E                 	db	62
+   386   007E31  7F                 	db	127
+   387   007E32  41                 	db	65
+   388   007E33  49                 	db	73
+   389   007E34  79                 	db	121
+   390   007E35  79                 	db	121
+   391   007E36  00                 	db	0
+   392   007E37  00                 	db	0
+   393   007E38  7F                 	db	127
+   394   007E39  7F                 	db	127
+   395   007E3A  08                 	db	8
+   396   007E3B  08                 	db	8
+   397   007E3C  7F                 	db	127
+   398   007E3D  7F                 	db	127
+   399   007E3E  00                 	db	0
+   400   007E3F  00                 	db	0
+   401   007E40  00                 	db	0
+   402   007E41  41                 	db	65
+   403   007E42  7F                 	db	127
+   404   007E43  7F                 	db	127
+   405   007E44  41                 	db	65
+   406   007E45  00                 	db	0
+   407   007E46  00                 	db	0
+   408   007E47  00                 	db	0
+   409   007E48  20                 	db	32
+   410   007E49  60                 	db	96
+   411   007E4A  40                 	db	64
+   412   007E4B  40                 	db	64
+   413   007E4C  7F                 	db	127
+   414   007E4D  3F                 	db	63
+   415   007E4E  00                 	db	0
+   416   007E4F  00                 	db	0
+   417   007E50  7F                 	db	127
+   418   007E51  7F                 	db	127
+   419   007E52  1C                 	db	28
+   420   007E53  36                 	db	54
+   421   007E54  63                 	db	99
+   422   007E55  41                 	db	65
+   423   007E56  00                 	db	0
+   424   007E57  00                 	db	0
+   425   007E58  7F                 	db	127
+   426   007E59  7F                 	db	127
+   427   007E5A  40                 	db	64
+   428   007E5B  40                 	db	64
+   429   007E5C  40                 	db	64
+   430   007E5D  40                 	db	64
+   431   007E5E  00                 	db	0
+   432   007E5F  7F                 	db	127
+   433   007E60  7F                 	db	127
+   434   007E61  06                 	db	6
+   435   007E62  0C                 	db	12
+   436   007E63  06                 	db	6
+   437   007E64  7F                 	db	127
+   438   007E65  7F                 	db	127
+   439   007E66  00                 	db	0
+   440   007E67  00                 	db	0
+   441   007E68  7F                 	db	127
+   442   007E69  7F                 	db	127
+   443   007E6A  0E                 	db	14
+   444   007E6B  1C                 	db	28
+   445   007E6C  7F                 	db	127
+   446   007E6D  7F                 	db	127
+   447   007E6E  00                 	db	0
+   448   007E6F  00                 	db	0
+   449   007E70  3E                 	db	62
+   450   007E71  7F                 	db	127
+   451   007E72  41                 	db	65
+   452   007E73  41                 	db	65
+   453   007E74  7F                 	db	127
+   454   007E75  3E                 	db	62
+   455   007E76  00                 	db	0
+   456   007E77  00                 	db	0
+   457   007E78  7F                 	db	127
+   458   007E79  7F                 	db	127
+   459   007E7A  09                 	db	9
+   460   007E7B  09                 	db	9
+   461   007E7C  0F                 	db	15
+   462   007E7D  06                 	db	6
+   463   007E7E  00                 	db	0
+   464   007E7F  00                 	db	0
+   465   007E80  3E                 	db	62
+   466   007E81  7F                 	db	127
+   467   007E82  51                 	db	81
+   468   007E83  21                 	db	33
+   469   007E84  7F                 	db	127
+   470   007E85  5E                 	db	94
+   471   007E86  00                 	db	0
+   472   007E87  00                 	db	0
+   473   007E88  7F                 	db	127
+   474   007E89  7F                 	db	127
+   475   007E8A  09                 	db	9
+   476   007E8B  19                 	db	25
+   477   007E8C  7F                 	db	127
+   478   007E8D  66                 	db	102
+   479   007E8E  00                 	db	0
+   480   007E8F  00                 	db	0
+   481   007E90  26                 	db	38
+   482   007E91  6F                 	db	111
+   483   007E92  49                 	db	73
+   484   007E93  49                 	db	73
+   485   007E94  7B                 	db	123
+   486   007E95  32                 	db	50
+   487   007E96  00                 	db	0
+   488   007E97  00                 	db	0
+   489   007E98  01                 	db	1
+   490   007E99  01                 	db	1
+   491   007E9A  7F                 	db	127
+   492   007E9B  7F                 	db	127
+   493   007E9C  01                 	db	1
+   494   007E9D  01                 	db	1
+   495   007E9E  00                 	db	0
+   496   007E9F  00                 	db	0
+   497   007EA0  3F                 	db	63
+   498   007EA1  7F                 	db	127
+   499   007EA2  40                 	db	64
+   500   007EA3  40                 	db	64
+   501   007EA4  7F                 	db	127
+   502   007EA5  7F                 	db	127
+   503   007EA6  00                 	db	0
+   504   007EA7  00                 	db	0
+   505   007EA8  1F                 	db	31
+   506   007EA9  3F                 	db	63
+   507   007EAA  60                 	db	96
+   508   007EAB  60                 	db	96
+   509   007EAC  3F                 	db	63
+   510   007EAD  1F                 	db	31
+   511   007EAE  00                 	db	0
+   512   007EAF  7F                 	db	127
+   513   007EB0  7F                 	db	127
+   514   007EB1  30                 	db	48
+   515   007EB2  18                 	db	24
+   516   007EB3  30                 	db	48
+   517   007EB4  7F                 	db	127
+   518   007EB5  7F                 	db	127
+   519   007EB6  00                 	db	0
+   520   007EB7  00                 	db	0
+   521   007EB8  63                 	db	99
+   522   007EB9  77                 	db	119
+   523   007EBA  1C                 	db	28
+   524   007EBB  1C                 	db	28
+   525   007EBC  77                 	db	119
+   526   007EBD  63                 	db	99
+   527   007EBE  00                 	db	0
+   528   007EBF  00                 	db	0
+   529   007EC0  07                 	db	7
+   530   007EC1  0F                 	db	15
+   531   007EC2  78                 	db	120
+   532   007EC3  78                 	db	120
+   533   007EC4  0F                 	db	15
+   534   007EC5  07                 	db	7
+   535   007EC6  00                 	db	0
+   536   007EC7  00                 	db	0
+   537   007EC8  61                 	db	97
+   538   007EC9  71                 	db	113
+   539   007ECA  59                 	db	89
+   540   007ECB  4D                 	db	77
+   541   007ECC  47                 	db	71
+   542   007ECD  43                 	db	67
+   543   007ECE  00                 	db	0
+   544   007ECF  00                 	db	0
+   545   007ED0  00                 	db	0
+   546   007ED1  00                 	db	0
+   547   007ED2  7F                 	db	127
+   548   007ED3  7F                 	db	127
+   549   007ED4  41                 	db	65
+   550   007ED5  41                 	db	65
+   551   007ED6  00                 	db	0
+   552   007ED7  00                 	db	0
+   553   007ED8  03                 	db	3
+   554   007ED9  06                 	db	6
+   555   007EDA  0C                 	db	12
+   556   007EDB  18                 	db	24
+   557   007EDC  30                 	db	48
+   558   007EDD  60                 	db	96
+   559   007EDE  00                 	db	0
+   560   007EDF  00                 	db	0
+   561   007EE0  41                 	db	65
+   562   007EE1  41                 	db	65
+   563   007EE2  7F                 	db	127
+   564   007EE3  7F                 	db	127
+   565   007EE4  00                 	db	0
+   566   007EE5  00                 	db	0
+   567   007EE6  00                 	db	0
+   568   007EE7  08                 	db	8
+   569   007EE8  0C                 	db	12
+   570   007EE9  06                 	db	6
+   571   007EEA  03                 	db	3
+   572   007EEB  06                 	db	6
+   573   007EEC  0C                 	db	12
+   574   007EED  08                 	db	8
+   575   007EEE  00                 	db	0
+   576   007EEF  40                 	db	64
+   577   007EF0  40                 	db	64
+   578   007EF1  40                 	db	64
+   579   007EF2  40                 	db	64
+   580   007EF3  40                 	db	64
+   581   007EF4  40                 	db	64
+   582   007EF5  40                 	db	64
+   583   007EF6  00                 	db	0
+   584   007EF7  02                 	db	2
+   585   007EF8  06                 	db	6
+   586   007EF9  0C                 	db	12
+   587   007EFA  08                 	db	8
+   588   007EFB  00                 	db	0
+   589   007EFC  00                 	db	0
+   590   007EFD  00                 	db	0
+   591   007EFE  00                 	db	0
+   592   007EFF  00                 	db	0
+   593   007F00  20                 	db	32
+   594   007F01  74                 	db	116
+   595   007F02  54                 	db	84
+   596   007F03  54                 	db	84
+   597   007F04  7C                 	db	124
+   598   007F05  78                 	db	120
+   599   007F06  00                 	db	0
+   600   007F07  00                 	db	0
+   601   007F08  7F                 	db	127
+   602   007F09  7F                 	db	127
+   603   007F0A  44                 	db	68
+   604   007F0B  44                 	db	68
+   605   007F0C  7C                 	db	124
+   606   007F0D  38                 	db	56
+   607   007F0E  00                 	db	0
+   608   007F0F  00                 	db	0
+   609   007F10  38                 	db	56
+   610   007F11  7C                 	db	124
+   611   007F12  44                 	db	68
+   612   007F13  44                 	db	68
+   613   007F14  44                 	db	68
+   614   007F15  00                 	db	0
+   615   007F16  00                 	db	0
+   616   007F17  00                 	db	0
+   617   007F18  38                 	db	56
+   618   007F19  7C                 	db	124
+   619   007F1A  44                 	db	68
+   620   007F1B  44                 	db	68
+   621   007F1C  7F                 	db	127
+   622   007F1D  7F                 	db	127
+   623   007F1E  00                 	db	0
+   624   007F1F  00                 	db	0
+   625   007F20  38                 	db	56
+   626   007F21  7C                 	db	124
+   627   007F22  54                 	db	84
+   628   007F23  54                 	db	84
+   629   007F24  5C                 	db	92
+   630   007F25  18                 	db	24
+   631   007F26  00                 	db	0
+   632   007F27  00                 	db	0
+   633   007F28  04                 	db	4
+   634   007F29  7E                 	db	126
+   635   007F2A  7F                 	db	127
+   636   007F2B  05                 	db	5
+   637   007F2C  05                 	db	5
+   638   007F2D  00                 	db	0
+   639   007F2E  00                 	db	0
+   640   007F2F  00                 	db	0
+   641   007F30  98                 	db	152
+   642   007F31  BC                 	db	188
+   643   007F32  A4                 	db	164
+   644   007F33  A4                 	db	164
+   645   007F34  FC                 	db	252
+   646   007F35  7C                 	db	124
+   647   007F36  00                 	db	0
+   648   007F37  00                 	db	0
+   649   007F38  7F                 	db	127
+   650   007F39  7F                 	db	127
+   651   007F3A  04                 	db	4
+   652   007F3B  04                 	db	4
+   653   007F3C  7C                 	db	124
+   654   007F3D  78                 	db	120
+   655   007F3E  00                 	db	0
+   656   007F3F  00                 	db	0
+   657   007F40  00                 	db	0
+   658   007F41  44                 	db	68
+   659   007F42  7D                 	db	125
+   660   007F43  7D                 	db	125
+   661   007F44  40                 	db	64
+   662   007F45  00                 	db	0
+   663   007F46  00                 	db	0
+   664   007F47  00                 	db	0
+   665   007F48  80                 	db	128
+   666   007F49  80                 	db	128
+   667   007F4A  FD                 	db	253
+   668   007F4B  7D                 	db	125
+   669   007F4C  00                 	db	0
+   670   007F4D  00                 	db	0
+   671   007F4E  00                 	db	0
+   672   007F4F  00                 	db	0
+   673   007F50  7F                 	db	127
+   674   007F51  7F                 	db	127
+   675   007F52  10                 	db	16
+   676   007F53  38                 	db	56
+   677   007F54  6C                 	db	108
+   678   007F55  44                 	db	68
+   679   007F56  00                 	db	0
+   680   007F57  00                 	db	0
+   681   007F58  00                 	db	0
+   682   007F59  41                 	db	65
+   683   007F5A  7F                 	db	127
+   684   007F5B  7F                 	db	127
+   685   007F5C  40                 	db	64
+   686   007F5D  00                 	db	0
+   687   007F5E  00                 	db	0
+   688   007F5F  7C                 	db	124
+   689   007F60  7C                 	db	124
+   690   007F61  0C                 	db	12
+   691   007F62  18                 	db	24
+   692   007F63  0C                 	db	12
+   693   007F64  7C                 	db	124
+   694   007F65  78                 	db	120
+   695   007F66  00                 	db	0
+   696   007F67  00                 	db	0
+   697   007F68  7C                 	db	124
+   698   007F69  7C                 	db	124
+   699   007F6A  04                 	db	4
+   700   007F6B  04                 	db	4
+   701   007F6C  7C                 	db	124
+   702   007F6D  78                 	db	120
+   703   007F6E  00                 	db	0
+   704   007F6F  00                 	db	0
+   705   007F70  38                 	db	56
+   706   007F71  7C                 	db	124
+   707   007F72  44                 	db	68
+   708   007F73  44                 	db	68
+   709   007F74  7C                 	db	124
+   710   007F75  38                 	db	56
+   711   007F76  00                 	db	0
+   712   007F77  00                 	db	0
+   713   007F78  FC                 	db	252
+   714   007F79  FC                 	db	252
+   715   007F7A  44                 	db	68
+   716   007F7B  44                 	db	68
+   717   007F7C  7C                 	db	124
+   718   007F7D  38                 	db	56
+   719   007F7E  00                 	db	0
+   720   007F7F  00                 	db	0
+   721   007F80  38                 	db	56
+   722   007F81  7C                 	db	124
+   723   007F82  44                 	db	68
+   724   007F83  44                 	db	68
+   725   007F84  FC                 	db	252
+   726   007F85  FC                 	db	252
+   727   007F86  00                 	db	0
+   728   007F87  00                 	db	0
+   729   007F88  7C                 	db	124
+   730   007F89  7C                 	db	124
+   731   007F8A  04                 	db	4
+   732   007F8B  04                 	db	4
+   733   007F8C  0C                 	db	12
+   734   007F8D  08                 	db	8
+   735   007F8E  00                 	db	0
+   736   007F8F  00                 	db	0
+   737   007F90  48                 	db	72
+   738   007F91  5C                 	db	92
+   739   007F92  54                 	db	84
+   740   007F93  54                 	db	84
+   741   007F94  74                 	db	116
+   742   007F95  24                 	db	36
+   743   007F96  00                 	db	0
+   744   007F97  00                 	db	0
+   745   007F98  04                 	db	4
+   746   007F99  04                 	db	4
+   747   007F9A  3E                 	db	62
+   748   007F9B  7E                 	db	126
+   749   007F9C  44                 	db	68
+   750   007F9D  44                 	db	68
+   751   007F9E  00                 	db	0
+   752   007F9F  00                 	db	0
+   753   007FA0  3C                 	db	60
+   754   007FA1  7C                 	db	124
+   755   007FA2  40                 	db	64
+   756   007FA3  40                 	db	64
+   757   007FA4  7C                 	db	124
+   758   007FA5  7C                 	db	124
+   759   007FA6  00                 	db	0
+   760   007FA7  00                 	db	0
+   761   007FA8  1C                 	db	28
+   762   007FA9  3C                 	db	60
+   763   007FAA  60                 	db	96
+   764   007FAB  60                 	db	96
+   765   007FAC  3C                 	db	60
+   766   007FAD  1C                 	db	28
+   767   007FAE  00                 	db	0
+   768   007FAF  1C                 	db	28
+   769   007FB0  7C                 	db	124
+   770   007FB1  60                 	db	96
+   771   007FB2  30                 	db	48
+   772   007FB3  60                 	db	96
+   773   007FB4  7C                 	db	124
+   774   007FB5  1C                 	db	28
+   775   007FB6  00                 	db	0
+   776   007FB7  00                 	db	0
+   777   007FB8  44                 	db	68
+   778   007FB9  6C                 	db	108
+   779   007FBA  38                 	db	56
+   780   007FBB  38                 	db	56
+   781   007FBC  6C                 	db	108
+   782   007FBD  44                 	db	68
+   783   007FBE  00                 	db	0
+   784   007FBF  00                 	db	0
+   785   007FC0  9C                 	db	156
+   786   007FC1  BC                 	db	188
+   787   007FC2  A0                 	db	160
+   788   007FC3  A0                 	db	160
+   789   007FC4  FC                 	db	252
+   790   007FC5  7C                 	db	124
+   791   007FC6  00                 	db	0
+   792   007FC7  00                 	db	0
+   793   007FC8  44                 	db	68
+   794   007FC9  64                 	db	100
+   795   007FCA  74                 	db	116
+   796   007FCB  5C                 	db	92
+   797   007FCC  4C                 	db	76
+   798   007FCD  44                 	db	68
+   799   007FCE  00                 	db	0
+   800   007FCF  00                 	db	0
+   801   007FD0  00                 	db	0
+   802   007FD1  08                 	db	8
+   803   007FD2  3E                 	db	62
+   804   007FD3  77                 	db	119
+   805   007FD4  41                 	db	65
+   806   007FD5  41                 	db	65
+   807   007FD6  00                 	db	0
+   808   007FD7  00                 	db	0
+   809   007FD8  00                 	db	0
+   810   007FD9  00                 	db	0
+   811   007FDA  FF                 	db	255
+   812   007FDB  FF                 	db	255
+   813   007FDC  00                 	db	0
+   814   007FDD  00                 	db	0
+   815   007FDE  00                 	db	0
+   816   007FDF  00                 	db	0
+   817   007FE0  41                 	db	65
+   818   007FE1  41                 	db	65
+   819   007FE2  77                 	db	119
+   820   007FE3  3E                 	db	62
+   821   007FE4  08                 	db	8
+   822   007FE5  00                 	db	0
+   823   007FE6  00                 	db	0
+   824   007FE7  0C                 	db	12
+   825   007FE8  06                 	db	6
+   826   007FE9  06                 	db	6
+   827   007FEA  0C                 	db	12
+   828   007FEB  18                 	db	24
+   829   007FEC  18                 	db	24
+   830   007FED  0C                 	db	12
+   831   007FEE  00                 	db	0
+   832   007FEF  00                 	db	0
+   833   007FF0  60                 	db	96
+   834   007FF1  78                 	db	120
+   835   007FF2  5E                 	db	94
+   836   007FF3  46                 	db	70
+   837   007FF4  58                 	db	88
+   838   007FF5  60                 	db	96
+   839   007FF6  00                 	db	0
+   840   007FF7  00                 	db	0
+   841   007FF8  00                 	db	0
+   842   007FF9  00                 	db	0
+   843   007FFA  00                 	db	0
+   844   007FFB  00                 	db	0
+   845   007FFC  00                 	db	0
+   846   007FFD  00                 	db	0
+   847   007FFE  00                 	db	0
+   848   007FFF                     __end_of_symbol:
+   849                           	callstack 0
+   850   000000                     _PORTDbits	set	3971
+   851   000000                     _TRISDbits	set	3989
+   852   000000                     _ADCON1	set	4033
+   853   007FFF  00                 	db	0	; dummy byte at the end
+   854   000000                     
+   855                           ; #config settings
+   856                           
+   857                           	psect	cinit
+   858   007B40                     __pcinit:
+   859                           	callstack 0
+   860   007B40                     start_initialization:
+   861                           	callstack 0
+   862   007B40                     __initialization:
+   863                           	callstack 0
+   864                           
+   865                           ; Initialize objects allocated to COMRAM (1 bytes)
+   866                           ; load TBLPTR registers with __pidataCOMRAM
+   867   007B40  0E27               	movlw	low __pidataCOMRAM
+   868   007B42  6EF6               	movwf	tblptrl,c
+   869   007B44  0E7B               	movlw	high __pidataCOMRAM
+   870   007B46  6EF7               	movwf	tblptrh,c
+   871   007B48  0E00               	movlw	low (__pidataCOMRAM shr (0+16))
+   872   007B4A  6EF8               	movwf	tblptru,c
+   873   007B4C  0009               	tblrd		*+	;fetch initializer
+   874   007B4E  CFF5 F013          	movff	tablat,__pdataCOMRAM
+   875                           
+   876                           ; Clear objects allocated to COMRAM (1 bytes)
+   877   007B52  6A12               	clrf	__pbssCOMRAM& (0+255),c
+   878   007B54                     end_of_initialization:
+   879                           	callstack 0
+   880   007B54                     __end_of__initialization:
+   881                           	callstack 0
+   882   007B54  0E00               	movlw	low (__Lmediumconst shr (0+16))
+   883   007B56  6EF8               	movwf	tblptru,c
+   884   007B58  0100               	movlb	0
+   885   007B5A  EF29  F03E         	goto	_main	;jump to C main() function
+   886                           
+   887                           	psect	bssCOMRAM
+   888   000012                     __pbssCOMRAM:
+   889                           	callstack 0
+   890   000012                     _i:
+   891                           	callstack 0
+   892   000012                     	ds	1
+   893                           
+   894                           	psect	dataCOMRAM
+   895   000013                     __pdataCOMRAM:
+   896                           	callstack 0
+   897   000013                     _n_matrices:
+   898                           	callstack 0
+   899   000013                     	ds	1
+   900                           
+   901                           	psect	cstackCOMRAM
+   902   000001                     __pcstackCOMRAM:
+   903                           	callstack 0
+   904   000001                     ??_SPI_SOFT_TX:
+   905                           
+   906                           ; 1 bytes @ 0x0
+   907   000001                     	ds	4
+   908   000005                     SPI_SOFT_TX@cmd:
+   909                           	callstack 0
+   910                           
+   911                           ; 1 bytes @ 0x4
+   912   000005                     	ds	1
+   913   000006                     SPI_SOFT_TX@j:
+   914                           	callstack 0
+   915                           
+   916                           ; 1 bytes @ 0x5
+   917   000006                     	ds	1
+   918   000007                     MAX7219_Tx@dato:
+   919                           	callstack 0
+   920                           
+   921                           ; 1 bytes @ 0x6
+   922   000007                     	ds	1
+   923   000008                     MAX7219_Tx@matrices:
+   924                           	callstack 0
+   925                           
+   926                           ; 1 bytes @ 0x7
+   927   000008                     	ds	1
+   928   000009                     MAX7219_Tx@dir:
+   929                           	callstack 0
+   930                           
+   931                           ; 1 bytes @ 0x8
+   932   000009                     	ds	1
+   933   00000A                     MAX7219_Config@matrices:
+   934                           	callstack 0
+   935                           
+   936                           ; 1 bytes @ 0x9
+   937   00000A                     	ds	1
+   938   00000B                     MAX7219_Init@n_matrices:
+   939                           	callstack 0
+   940                           
+   941                           ; 1 bytes @ 0xA
+   942   00000B                     	ds	1
+   943   00000C                     ??_main:
+   944                           
+   945                           ; 1 bytes @ 0xB
+   946   00000C                     	ds	4
+   947   000010                     main@j:
+   948                           	callstack 0
+   949                           
+   950                           ; 2 bytes @ 0xF
+   951   000010                     	ds	2
+   952                           
+   953 ;;
+   954 ;;Main: autosize = 0, tempsize = 4, incstack = 0, save=0
+   955 ;;
+   956 ;; *************** function _main *****************
+   957 ;; Defined at:
+   958 ;;		line 9 in file "main.c"
+   959 ;; Parameters:    Size  Location     Type
+   960 ;;		None
+   961 ;; Auto vars:     Size  Location     Type
+   962 ;;  j               2   15[COMRAM] int 
+   963 ;; Return value:  Size  Location     Type
+   964 ;;                  1    wreg      void 
+   965 ;; Registers used:
+   966 ;;		wreg, status,2, status,0, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
+   967 ;; Tracked objects:
+   968 ;;		On entry : 0/0
+   969 ;;		On exit  : 0/0
+   970 ;;		Unchanged: 0/0
+   971 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   972 ;;      Params:         0       0       0       0       0       0       0       0       0
+   973 ;;      Locals:         2       0       0       0       0       0       0       0       0
+   974 ;;      Temps:          4       0       0       0       0       0       0       0       0
+   975 ;;      Totals:         6       0       0       0       0       0       0       0       0
+   976 ;;Total ram usage:        6 bytes
+   977 ;; Hardware stack levels required when called: 5
+   978 ;; This function calls:
+   979 ;;		_MAX7219_Init
+   980 ;;		_MAX7219_Tx
+   981 ;; This function is called by:
+   982 ;;		Startup code after reset
+   983 ;; This function uses a non-reentrant model
+   984 ;;
+   985                           
+   986                           	psect	text0
+   987   007C52                     __ptext0:
+   988                           	callstack 0
+   989   007C52                     _main:
+   990                           	callstack 26
+   991   007C52                     
+   992                           ;main.c: 11:     ADCON1 = 15;
+   993   007C52  0E0F               	movlw	15
+   994   007C54  6EC1               	movwf	193,c	;volatile
+   995   007C56                     
+   996                           ;main.c: 13:     MAX7219_Init(n_matrices);
+   997   007C56  0E02               	movlw	2
+   998   007C58  ECAF  F03D         	call	_MAX7219_Init
+   999   007C5C                     l851:
+  1000                           
+  1001                           ;main.c: 17:         for(i = 33; i<= 58; i++){
+  1002   007C5C  0E21               	movlw	33
+  1003   007C5E  6E12               	movwf	_i^0,c
+  1004   007C60                     l857:
+  1005                           
+  1006                           ;main.c: 18:             for(int j=1; j<8; j++){
+  1007   007C60  0E00               	movlw	0
+  1008   007C62  6E11               	movwf	(main@j+1)^0,c
+  1009   007C64  0E01               	movlw	1
+  1010   007C66  6E10               	movwf	main@j^0,c
+  1011   007C68                     l863:
+  1012                           
+  1013                           ;main.c: 19:                 MAX7219_Tx(j, symbol[i][j-1], 0);
+  1014   007C68  5012               	movf	_i^0,w,c
+  1015   007C6A  0D08               	mullw	8
+  1016   007C6C  0EF7               	movlw	low _symbol
+  1017   007C6E  24F3               	addwf	243,w,c
+  1018   007C70  6E0C               	movwf	??_main^0,c
+  1019   007C72  0E7C               	movlw	high _symbol
+  1020   007C74  20F4               	addwfc	prodh,w,c
+  1021   007C76  6E0D               	movwf	(??_main+1)^0,c
+  1022   007C78  5010               	movf	main@j^0,w,c
+  1023   007C7A  260C               	addwf	??_main^0,f,c
+  1024   007C7C  5011               	movf	(main@j+1)^0,w,c
+  1025   007C7E  220D               	addwfc	(??_main+1)^0,f,c
+  1026   007C80  0EFF               	movlw	255
+  1027   007C82  240C               	addwf	??_main^0,w,c
+  1028   007C84  6E0E               	movwf	(??_main+2)^0,c
+  1029   007C86  0EFF               	movlw	255
+  1030   007C88  200D               	addwfc	(??_main+1)^0,w,c
+  1031   007C8A  6E0F               	movwf	(??_main+3)^0,c
+  1032   007C8C  C00E  FFF6         	movff	??_main+2,tblptrl
+  1033   007C90  C00F  FFF7         	movff	??_main+3,tblptrh
+  1034   007C94                     	if	0	;tblptru may be non-zero
+  1035   007C94                     	endif
+  1036   007C94                     	if	0	;tblptru may be non-zero
+  1037   007C94                     	endif
+  1038   007C94  0008               	tblrd		*
+  1039   007C96  CFF5 F007          	movff	tablat,MAX7219_Tx@dato
+  1040   007C9A  0E00               	movlw	0
+  1041   007C9C  6E08               	movwf	MAX7219_Tx@matrices^0,c
+  1042   007C9E  5010               	movf	main@j^0,w,c
+  1043   007CA0  ECC1  F03D         	call	_MAX7219_Tx
+  1044   007CA4                     
+  1045                           ;main.c: 20:             }
+  1046   007CA4  4A10               	infsnz	main@j^0,f,c
+  1047   007CA6  2A11               	incf	(main@j+1)^0,f,c
+  1048   007CA8  BE11               	btfsc	(main@j+1)^0,7,c
+  1049   007CAA  EF60  F03E         	goto	u141
+  1050   007CAE  5011               	movf	(main@j+1)^0,w,c
+  1051   007CB0  E109               	bnz	u140
+  1052   007CB2  0E08               	movlw	8
+  1053   007CB4  5C10               	subwf	main@j^0,w,c
+  1054   007CB6  A0D8               	btfss	status,0,c
+  1055   007CB8  EF60  F03E         	goto	u141
+  1056   007CBC  EF62  F03E         	goto	u140
+  1057   007CC0                     u141:
+  1058   007CC0  EF34  F03E         	goto	l863
+  1059   007CC4                     u140:
+  1060   007CC4                     
+  1061                           ;main.c: 21:             _delay((unsigned long)((500)*(20000000L/4000.0)));
+  1062   007CC4  0E0D               	movlw	13
+  1063   007CC6  6E0D               	movwf	(??_main+1)^0,c
+  1064   007CC8  0EAF               	movlw	175
+  1065   007CCA  6E0C               	movwf	??_main^0,c
+  1066   007CCC  0EB6               	movlw	182
+  1067   007CCE                     u167:
+  1068   007CCE  2EE8               	decfsz	wreg,f,c
+  1069   007CD0  D7FE               	bra	u167
+  1070   007CD2  2E0C               	decfsz	??_main^0,f,c
+  1071   007CD4  D7FC               	bra	u167
+  1072   007CD6  2E0D               	decfsz	(??_main+1)^0,f,c
+  1073   007CD8  D7FA               	bra	u167
+  1074   007CDA  D000               	nop2	
+  1075   007CDC                     
+  1076                           ;main.c: 22:         }
+  1077   007CDC  2A12               	incf	_i^0,f,c
+  1078   007CDE  0E3A               	movlw	58
+  1079   007CE0  6412               	cpfsgt	_i^0,c
+  1080   007CE2  EF75  F03E         	goto	u151
+  1081   007CE6  EF77  F03E         	goto	u150
+  1082   007CEA                     u151:
+  1083   007CEA  EF30  F03E         	goto	l857
+  1084   007CEE                     u150:
+  1085   007CEE  EF2E  F03E         	goto	l851
+  1086   007CF2  EF00  F000         	goto	start
+  1087   007CF6                     __end_of_main:
+  1088                           	callstack 0
+  1089                           
+  1090 ;; *************** function _MAX7219_Init *****************
+  1091 ;; Defined at:
+  1092 ;;		line 6 in file "MAX7219_LIB.c"
+  1093 ;; Parameters:    Size  Location     Type
+  1094 ;;  n_matrices      1    wreg     unsigned char 
+  1095 ;; Auto vars:     Size  Location     Type
+  1096 ;;  n_matrices      1   10[COMRAM] unsigned char 
+  1097 ;; Return value:  Size  Location     Type
+  1098 ;;                  1    wreg      void 
+  1099 ;; Registers used:
+  1100 ;;		wreg, status,2, status,0, cstack
+  1101 ;; Tracked objects:
+  1102 ;;		On entry : 0/0
+  1103 ;;		On exit  : 0/0
+  1104 ;;		Unchanged: 0/0
+  1105 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+  1106 ;;      Params:         0       0       0       0       0       0       0       0       0
+  1107 ;;      Locals:         1       0       0       0       0       0       0       0       0
+  1108 ;;      Temps:          0       0       0       0       0       0       0       0       0
+  1109 ;;      Totals:         1       0       0       0       0       0       0       0       0
+  1110 ;;Total ram usage:        1 bytes
+  1111 ;; Hardware stack levels used: 1
+  1112 ;; Hardware stack levels required when called: 4
+  1113 ;; This function calls:
+  1114 ;;		_MAX7219_Config
+  1115 ;;		_SPI_SOFT_INIT
+  1116 ;; This function is called by:
+  1117 ;;		_main
+  1118 ;; This function uses a non-reentrant model
+  1119 ;;
+  1120                           
+  1121                           	psect	text1
+  1122   007B5E                     __ptext1:
+  1123                           	callstack 0
+  1124   007B5E                     _MAX7219_Init:
+  1125                           	callstack 26
+  1126                           
+  1127                           ;incstack = 0
+  1128                           ;MAX7219_Init@n_matrices stored from wreg
+  1129   007B5E  6E0B               	movwf	MAX7219_Init@n_matrices^0,c
+  1130   007B60                     
+  1131                           ;MAX7219_LIB.c: 7:     SPI_SOFT_INIT();
+  1132   007B60  EC94  F03D         	call	_SPI_SOFT_INIT	;wreg free
+  1133                           
+  1134                           ;MAX7219_LIB.c: 8:     while (n_matrices) {
+  1135   007B64  EFB8  F03D         	goto	l845
+  1136   007B68                     l841:
+  1137                           
+  1138                           ;MAX7219_LIB.c: 9:         n_matrices--;
+  1139   007B68  060B               	decf	MAX7219_Init@n_matrices^0,f,c
+  1140   007B6A                     
+  1141                           ;MAX7219_LIB.c: 10:         MAX7219_Config(n_matrices);
+  1142   007B6A  500B               	movf	MAX7219_Init@n_matrices^0,w,c
+  1143   007B6C  ECD8  F03D         	call	_MAX7219_Config
+  1144   007B70                     l845:
+  1145                           
+  1146                           ;MAX7219_LIB.c: 8:     while (n_matrices) {
+  1147   007B70  500B               	movf	MAX7219_Init@n_matrices^0,w,c
+  1148   007B72  A4D8               	btfss	status,2,c
+  1149   007B74  EFBE  F03D         	goto	u131
+  1150   007B78  EFC0  F03D         	goto	u130
+  1151   007B7C                     u131:
+  1152   007B7C  EFB4  F03D         	goto	l841
+  1153   007B80                     u130:
+  1154   007B80  0012               	return		;funcret
+  1155   007B82                     __end_of_MAX7219_Init:
+  1156                           	callstack 0
+  1157                           
+  1158 ;; *************** function _SPI_SOFT_INIT *****************
+  1159 ;; Defined at:
+  1160 ;;		line 5 in file "SPI_SOFT_LIB.c"
+  1161 ;; Parameters:    Size  Location     Type
+  1162 ;;		None
+  1163 ;; Auto vars:     Size  Location     Type
+  1164 ;;		None
+  1165 ;; Return value:  Size  Location     Type
+  1166 ;;                  1    wreg      void 
+  1167 ;; Registers used:
+  1168 ;;		None
+  1169 ;; Tracked objects:
+  1170 ;;		On entry : 0/0
+  1171 ;;		On exit  : 0/0
+  1172 ;;		Unchanged: 0/0
+  1173 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+  1174 ;;      Params:         0       0       0       0       0       0       0       0       0
+  1175 ;;      Locals:         0       0       0       0       0       0       0       0       0
+  1176 ;;      Temps:          0       0       0       0       0       0       0       0       0
+  1177 ;;      Totals:         0       0       0       0       0       0       0       0       0
+  1178 ;;Total ram usage:        0 bytes
+  1179 ;; Hardware stack levels used: 1
+  1180 ;; This function calls:
+  1181 ;;		Nothing
+  1182 ;; This function is called by:
+  1183 ;;		_MAX7219_Init
+  1184 ;; This function uses a non-reentrant model
+  1185 ;;
+  1186                           
+  1187                           	psect	text2
+  1188   007B28                     __ptext2:
+  1189                           	callstack 0
+  1190   007B28                     _SPI_SOFT_INIT:
+  1191                           	callstack 29
+  1192   007B28                     
+  1193                           ;SPI_SOFT_LIB.c: 7:     TRISDbits.RD3 = 1;
+  1194   007B28  8695               	bsf	149,3,c	;volatile
+  1195                           
+  1196                           ;SPI_SOFT_LIB.c: 8:     TRISDbits.RD0 = 0;
+  1197   007B2A  9095               	bcf	149,0,c	;volatile
+  1198                           
+  1199                           ;SPI_SOFT_LIB.c: 9:     TRISDbits.RD2 = 0;
+  1200   007B2C  9495               	bcf	149,2,c	;volatile
+  1201                           
+  1202                           ;SPI_SOFT_LIB.c: 10:     TRISDbits.RD1 = 0;
+  1203   007B2E  9295               	bcf	149,1,c	;volatile
+  1204   007B30  0012               	return		;funcret
+  1205   007B32                     __end_of_SPI_SOFT_INIT:
+  1206                           	callstack 0
+  1207                           
+  1208 ;; *************** function _MAX7219_Config *****************
+  1209 ;; Defined at:
+  1210 ;;		line 14 in file "MAX7219_LIB.c"
+  1211 ;; Parameters:    Size  Location     Type
+  1212 ;;  matrices        1    wreg     unsigned char 
+  1213 ;; Auto vars:     Size  Location     Type
+  1214 ;;  matrices        1    9[COMRAM] unsigned char 
+  1215 ;; Return value:  Size  Location     Type
+  1216 ;;                  1    wreg      void 
+  1217 ;; Registers used:
+  1218 ;;		wreg, status,2, status,0, cstack
+  1219 ;; Tracked objects:
+  1220 ;;		On entry : 0/0
+  1221 ;;		On exit  : 0/0
+  1222 ;;		Unchanged: 0/0
+  1223 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+  1224 ;;      Params:         0       0       0       0       0       0       0       0       0
+  1225 ;;      Locals:         1       0       0       0       0       0       0       0       0
+  1226 ;;      Temps:          0       0       0       0       0       0       0       0       0
+  1227 ;;      Totals:         1       0       0       0       0       0       0       0       0
+  1228 ;;Total ram usage:        1 bytes
+  1229 ;; Hardware stack levels used: 1
+  1230 ;; Hardware stack levels required when called: 3
+  1231 ;; This function calls:
+  1232 ;;		_MAX7219_Tx
+  1233 ;; This function is called by:
+  1234 ;;		_MAX7219_Init
+  1235 ;; This function uses a non-reentrant model
+  1236 ;;
+  1237                           
+  1238                           	psect	text3
+  1239   007BB0                     __ptext3:
+  1240                           	callstack 0
+  1241   007BB0                     _MAX7219_Config:
+  1242                           	callstack 26
+  1243                           
+  1244                           ;incstack = 0
+  1245                           ;MAX7219_Config@matrices stored from wreg
+  1246   007BB0  6E0A               	movwf	MAX7219_Config@matrices^0,c
+  1247   007BB2                     
+  1248                           ;MAX7219_LIB.c: 15:     MAX7219_Tx(0x09, 0x00, matrices);
+  1249   007BB2  0E00               	movlw	0
+  1250   007BB4  6E07               	movwf	MAX7219_Tx@dato^0,c
+  1251   007BB6  C00A  F008         	movff	MAX7219_Config@matrices,MAX7219_Tx@matrices
+  1252   007BBA  0E09               	movlw	9
+  1253   007BBC  ECC1  F03D         	call	_MAX7219_Tx
+  1254                           
+  1255                           ;MAX7219_LIB.c: 16:     MAX7219_Tx(0x0B, 0x07, matrices);
+  1256   007BC0  0E07               	movlw	7
+  1257   007BC2  6E07               	movwf	MAX7219_Tx@dato^0,c
+  1258   007BC4  C00A  F008         	movff	MAX7219_Config@matrices,MAX7219_Tx@matrices
+  1259   007BC8  0E0B               	movlw	11
+  1260   007BCA  ECC1  F03D         	call	_MAX7219_Tx
+  1261                           
+  1262                           ;MAX7219_LIB.c: 17:     MAX7219_Tx(0x0A, 0x07, matrices);
+  1263   007BCE  0E07               	movlw	7
+  1264   007BD0  6E07               	movwf	MAX7219_Tx@dato^0,c
+  1265   007BD2  C00A  F008         	movff	MAX7219_Config@matrices,MAX7219_Tx@matrices
+  1266   007BD6  0E0A               	movlw	10
+  1267   007BD8  ECC1  F03D         	call	_MAX7219_Tx
+  1268                           
+  1269                           ;MAX7219_LIB.c: 18:     MAX7219_Tx(0x0C, 0x01, matrices);
+  1270   007BDC  0E01               	movlw	1
+  1271   007BDE  6E07               	movwf	MAX7219_Tx@dato^0,c
+  1272   007BE0  C00A  F008         	movff	MAX7219_Config@matrices,MAX7219_Tx@matrices
+  1273   007BE4  0E0C               	movlw	12
+  1274   007BE6  ECC1  F03D         	call	_MAX7219_Tx
+  1275                           
+  1276                           ;MAX7219_LIB.c: 19:     MAX7219_Tx(0x01, 0x00, matrices);
+  1277   007BEA  0E00               	movlw	0
+  1278   007BEC  6E07               	movwf	MAX7219_Tx@dato^0,c
+  1279   007BEE  C00A  F008         	movff	MAX7219_Config@matrices,MAX7219_Tx@matrices
+  1280   007BF2  0E01               	movlw	1
+  1281   007BF4  ECC1  F03D         	call	_MAX7219_Tx
+  1282   007BF8  0012               	return		;funcret
+  1283   007BFA                     __end_of_MAX7219_Config:
+  1284                           	callstack 0
+  1285                           
+  1286 ;; *************** function _MAX7219_Tx *****************
+  1287 ;; Defined at:
+  1288 ;;		line 22 in file "MAX7219_LIB.c"
+  1289 ;; Parameters:    Size  Location     Type
+  1290 ;;  dir             1    wreg     unsigned char 
+  1291 ;;  dato            1    6[COMRAM] unsigned char 
+  1292 ;;  matrices        1    7[COMRAM] unsigned char 
+  1293 ;; Auto vars:     Size  Location     Type
+  1294 ;;  dir             1    8[COMRAM] unsigned char 
+  1295 ;; Return value:  Size  Location     Type
+  1296 ;;                  1    wreg      void 
+  1297 ;; Registers used:
+  1298 ;;		wreg, status,2, status,0, cstack
+  1299 ;; Tracked objects:
+  1300 ;;		On entry : 0/0
+  1301 ;;		On exit  : 0/0
+  1302 ;;		Unchanged: 0/0
+  1303 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+  1304 ;;      Params:         2       0       0       0       0       0       0       0       0
+  1305 ;;      Locals:         1       0       0       0       0       0       0       0       0
+  1306 ;;      Temps:          0       0       0       0       0       0       0       0       0
+  1307 ;;      Totals:         3       0       0       0       0       0       0       0       0
+  1308 ;;Total ram usage:        3 bytes
+  1309 ;; Hardware stack levels used: 1
+  1310 ;; Hardware stack levels required when called: 2
+  1311 ;; This function calls:
+  1312 ;;		_MAX7219_No_OP
+  1313 ;;		_SPI_SOFT_TX
+  1314 ;; This function is called by:
+  1315 ;;		_main
+  1316 ;;		_MAX7219_Config
+  1317 ;; This function uses a non-reentrant model
+  1318 ;;
+  1319                           
+  1320                           	psect	text4
+  1321   007B82                     __ptext4:
+  1322                           	callstack 0
+  1323   007B82                     _MAX7219_Tx:
+  1324                           	callstack 28
+  1325                           
+  1326                           ;incstack = 0
+  1327                           ;MAX7219_Tx@dir stored from wreg
+  1328   007B82  6E09               	movwf	MAX7219_Tx@dir^0,c
+  1329   007B84                     
+  1330                           ;MAX7219_LIB.c: 23:     PORTDbits.RD1 = 0;
+  1331   007B84  9283               	bcf	131,1,c	;volatile
+  1332   007B86                     
+  1333                           ;MAX7219_LIB.c: 24:     SPI_SOFT_TX(dir);
+  1334   007B86  5009               	movf	MAX7219_Tx@dir^0,w,c
+  1335   007B88  ECFD  F03D         	call	_SPI_SOFT_TX
+  1336                           
+  1337                           ;MAX7219_LIB.c: 25:     SPI_SOFT_TX(dato);
+  1338   007B8C  5007               	movf	MAX7219_Tx@dato^0,w,c
+  1339   007B8E  ECFD  F03D         	call	_SPI_SOFT_TX
+  1340                           
+  1341                           ;MAX7219_LIB.c: 26:     while (matrices) {
+  1342   007B92  EFCE  F03D         	goto	l835
+  1343   007B96                     l831:
+  1344                           
+  1345                           ;MAX7219_LIB.c: 27:         matrices--;
+  1346   007B96  0608               	decf	MAX7219_Tx@matrices^0,f,c
+  1347   007B98                     
+  1348                           ;MAX7219_LIB.c: 28:         MAX7219_No_OP();
+  1349   007B98  EC99  F03D         	call	_MAX7219_No_OP	;wreg free
+  1350   007B9C                     l835:
+  1351                           
+  1352                           ;MAX7219_LIB.c: 26:     while (matrices) {
+  1353   007B9C  5008               	movf	MAX7219_Tx@matrices^0,w,c
+  1354   007B9E  A4D8               	btfss	status,2,c
+  1355   007BA0  EFD4  F03D         	goto	u121
+  1356   007BA4  EFD6  F03D         	goto	u120
+  1357   007BA8                     u121:
+  1358   007BA8  EFCB  F03D         	goto	l831
+  1359   007BAC                     u120:
+  1360   007BAC                     
+  1361                           ;MAX7219_LIB.c: 30:     PORTDbits.RD1 = 1;
+  1362   007BAC  8283               	bsf	131,1,c	;volatile
+  1363   007BAE  0012               	return		;funcret
+  1364   007BB0                     __end_of_MAX7219_Tx:
+  1365                           	callstack 0
+  1366                           
+  1367 ;; *************** function _MAX7219_No_OP *****************
+  1368 ;; Defined at:
+  1369 ;;		line 33 in file "MAX7219_LIB.c"
+  1370 ;; Parameters:    Size  Location     Type
+  1371 ;;		None
+  1372 ;; Auto vars:     Size  Location     Type
+  1373 ;;		None
+  1374 ;; Return value:  Size  Location     Type
+  1375 ;;                  1    wreg      void 
+  1376 ;; Registers used:
+  1377 ;;		wreg, status,2, status,0, cstack
+  1378 ;; Tracked objects:
+  1379 ;;		On entry : 0/0
+  1380 ;;		On exit  : 0/0
+  1381 ;;		Unchanged: 0/0
+  1382 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+  1383 ;;      Params:         0       0       0       0       0       0       0       0       0
+  1384 ;;      Locals:         0       0       0       0       0       0       0       0       0
+  1385 ;;      Temps:          0       0       0       0       0       0       0       0       0
+  1386 ;;      Totals:         0       0       0       0       0       0       0       0       0
+  1387 ;;Total ram usage:        0 bytes
+  1388 ;; Hardware stack levels used: 1
+  1389 ;; Hardware stack levels required when called: 1
+  1390 ;; This function calls:
+  1391 ;;		_SPI_SOFT_TX
+  1392 ;; This function is called by:
+  1393 ;;		_MAX7219_Tx
+  1394 ;; This function uses a non-reentrant model
+  1395 ;;
+  1396                           
+  1397                           	psect	text5
+  1398   007B32                     __ptext5:
+  1399                           	callstack 0
+  1400   007B32                     _MAX7219_No_OP:
+  1401                           	callstack 28
+  1402   007B32                     
+  1403                           ;MAX7219_LIB.c: 35:     SPI_SOFT_TX(0x00);
+  1404   007B32  0E00               	movlw	0
+  1405   007B34  ECFD  F03D         	call	_SPI_SOFT_TX
+  1406                           
+  1407                           ;MAX7219_LIB.c: 36:     SPI_SOFT_TX(0x00);
+  1408   007B38  0E00               	movlw	0
+  1409   007B3A  ECFD  F03D         	call	_SPI_SOFT_TX
+  1410   007B3E  0012               	return		;funcret
+  1411   007B40                     __end_of_MAX7219_No_OP:
+  1412                           	callstack 0
+  1413                           
+  1414 ;; *************** function _SPI_SOFT_TX *****************
+  1415 ;; Defined at:
+  1416 ;;		line 13 in file "SPI_SOFT_LIB.c"
+  1417 ;; Parameters:    Size  Location     Type
+  1418 ;;  cmd             1    wreg     unsigned char 
+  1419 ;; Auto vars:     Size  Location     Type
+  1420 ;;  cmd             1    4[COMRAM] unsigned char 
+  1421 ;;  j               1    5[COMRAM] unsigned char 
+  1422 ;; Return value:  Size  Location     Type
+  1423 ;;                  1    wreg      void 
+  1424 ;; Registers used:
+  1425 ;;		wreg, status,2, status,0
+  1426 ;; Tracked objects:
+  1427 ;;		On entry : 0/0
+  1428 ;;		On exit  : 0/0
+  1429 ;;		Unchanged: 0/0
+  1430 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+  1431 ;;      Params:         0       0       0       0       0       0       0       0       0
+  1432 ;;      Locals:         2       0       0       0       0       0       0       0       0
+  1433 ;;      Temps:          4       0       0       0       0       0       0       0       0
+  1434 ;;      Totals:         6       0       0       0       0       0       0       0       0
+  1435 ;;Total ram usage:        6 bytes
+  1436 ;; Hardware stack levels used: 1
+  1437 ;; This function calls:
+  1438 ;;		Nothing
+  1439 ;; This function is called by:
+  1440 ;;		_MAX7219_Tx
+  1441 ;;		_MAX7219_No_OP
+  1442 ;; This function uses a non-reentrant model
+  1443 ;;
+  1444                           
+  1445                           	psect	text6
+  1446   007BFA                     __ptext6:
+  1447                           	callstack 0
+  1448   007BFA                     _SPI_SOFT_TX:
+  1449                           	callstack 29
+  1450                           
+  1451                           ;incstack = 0
+  1452                           ;SPI_SOFT_TX@cmd stored from wreg
+  1453   007BFA  6E05               	movwf	SPI_SOFT_TX@cmd^0,c
+  1454   007BFC                     
+  1455                           ;SPI_SOFT_LIB.c: 15:     for(char j=0; j<8; j++){
+  1456   007BFC  0E00               	movlw	0
+  1457   007BFE  6E06               	movwf	SPI_SOFT_TX@j^0,c
+  1458   007C00                     l36:
+  1459                           
+  1460                           ;SPI_SOFT_LIB.c: 16:         PORTDbits.RD2 = 0;
+  1461   007C00  9483               	bcf	131,2,c	;volatile
+  1462   007C02                     
+  1463                           ;SPI_SOFT_LIB.c: 17:         PORTDbits.RD0 = ((cmd<<j)&0x80)?1:0;
+  1464   007C02  C006  F001         	movff	SPI_SOFT_TX@j,??_SPI_SOFT_TX
+  1465   007C06  5005               	movf	SPI_SOFT_TX@cmd^0,w,c
+  1466   007C08  6E02               	movwf	(??_SPI_SOFT_TX+1)^0,c
+  1467   007C0A  6A03               	clrf	(??_SPI_SOFT_TX+2)^0,c
+  1468   007C0C  2A01               	incf	??_SPI_SOFT_TX^0,f,c
+  1469   007C0E  EF0C  F03E         	goto	u14
+  1470   007C12                     u15:
+  1471   007C12  90D8               	bcf	status,0,c
+  1472   007C14  3602               	rlcf	(??_SPI_SOFT_TX+1)^0,f,c
+  1473   007C16  3603               	rlcf	(??_SPI_SOFT_TX+2)^0,f,c
+  1474   007C18                     u14:
+  1475   007C18  2E01               	decfsz	??_SPI_SOFT_TX^0,f,c
+  1476   007C1A  EF09  F03E         	goto	u15
+  1477   007C1E  BE02               	btfsc	(??_SPI_SOFT_TX+1)^0,7,c
+  1478   007C20  EF14  F03E         	goto	u21
+  1479   007C24  EF18  F03E         	goto	u20
+  1480   007C28                     u21:
+  1481   007C28  6A04               	clrf	(??_SPI_SOFT_TX+3)^0,c
+  1482   007C2A  2A04               	incf	(??_SPI_SOFT_TX+3)^0,f,c
+  1483   007C2C  EF19  F03E         	goto	u38
+  1484   007C30                     u20:
+  1485   007C30  6A04               	clrf	(??_SPI_SOFT_TX+3)^0,c
+  1486   007C32                     u38:
+  1487   007C32  5083               	movf	131,w,c	;volatile
+  1488   007C34  1804               	xorwf	(??_SPI_SOFT_TX+3)^0,w,c
+  1489   007C36  0BFE               	andlw	-2
+  1490   007C38  1804               	xorwf	(??_SPI_SOFT_TX+3)^0,w,c
+  1491   007C3A  6E83               	movwf	131,c	;volatile
+  1492   007C3C                     
+  1493                           ;SPI_SOFT_LIB.c: 18:         PORTDbits.RD2 = 1;
+  1494   007C3C  8483               	bsf	131,2,c	;volatile
+  1495   007C3E                     
+  1496                           ;SPI_SOFT_LIB.c: 19:     }
+  1497   007C3E  2A06               	incf	SPI_SOFT_TX@j^0,f,c
+  1498   007C40  0E07               	movlw	7
+  1499   007C42  6406               	cpfsgt	SPI_SOFT_TX@j^0,c
+  1500   007C44  EF26  F03E         	goto	u41
+  1501   007C48  EF28  F03E         	goto	u40
+  1502   007C4C                     u41:
+  1503   007C4C  EF00  F03E         	goto	l36
+  1504   007C50                     u40:
+  1505   007C50  0012               	return		;funcret
+  1506   007C52                     __end_of_SPI_SOFT_TX:
+  1507                           	callstack 0
+  1508                           
+  1509                           	psect	rparam
+  1510   000000                     
+  1511                           	psect	idloc
+  1512                           
+  1513                           ;Config register IDLOC0 @ 0x200000
+  1514                           ;	unspecified, using default values
+  1515   200000                     	org	2097152
+  1516   200000  FF                 	db	255
+  1517                           
+  1518                           ;Config register IDLOC1 @ 0x200001
+  1519                           ;	unspecified, using default values
+  1520   200001                     	org	2097153
+  1521   200001  FF                 	db	255
+  1522                           
+  1523                           ;Config register IDLOC2 @ 0x200002
+  1524                           ;	unspecified, using default values
+  1525   200002                     	org	2097154
+  1526   200002  FF                 	db	255
+  1527                           
+  1528                           ;Config register IDLOC3 @ 0x200003
+  1529                           ;	unspecified, using default values
+  1530   200003                     	org	2097155
+  1531   200003  FF                 	db	255
+  1532                           
+  1533                           ;Config register IDLOC4 @ 0x200004
+  1534                           ;	unspecified, using default values
+  1535   200004                     	org	2097156
+  1536   200004  FF                 	db	255
+  1537                           
+  1538                           ;Config register IDLOC5 @ 0x200005
+  1539                           ;	unspecified, using default values
+  1540   200005                     	org	2097157
+  1541   200005  FF                 	db	255
+  1542                           
+  1543                           ;Config register IDLOC6 @ 0x200006
+  1544                           ;	unspecified, using default values
+  1545   200006                     	org	2097158
+  1546   200006  FF                 	db	255
+  1547                           
+  1548                           ;Config register IDLOC7 @ 0x200007
+  1549                           ;	unspecified, using default values
+  1550   200007                     	org	2097159
+  1551   200007  FF                 	db	255
+  1552                           
+  1553                           	psect	config
+  1554                           
+  1555                           ;Config register CONFIG1L @ 0x300000
+  1556                           ;	PLL Prescaler Selection bits
+  1557                           ;	PLLDIV = 1, No prescale (4 MHz oscillator input drives PLL directly)
+  1558                           ;	System Clock Postscaler Selection bits
+  1559                           ;	CPUDIV = OSC1_PLL2, [Primary Oscillator Src: /1][96 MHz PLL Src: /2]
+  1560                           ;	USB Clock Selection bit (used in Full-Speed USB mode only; UCFG:FSEN = 1)
+  1561                           ;	USBDIV = 1, USB clock source comes directly from the primary oscillator block with no 
+      +                          postscale
+  1562   300000                     	org	3145728
+  1563   300000  00                 	db	0
+  1564                           
+  1565                           ;Config register CONFIG1H @ 0x300001
+  1566                           ;	Oscillator Selection bits
+  1567                           ;	FOSC = HS, HS oscillator (HS)
+  1568                           ;	Fail-Safe Clock Monitor Enable bit
+  1569                           ;	FCMEN = OFF, Fail-Safe Clock Monitor disabled
+  1570                           ;	Internal/External Oscillator Switchover bit
+  1571                           ;	IESO = OFF, Oscillator Switchover mode disabled
+  1572   300001                     	org	3145729
+  1573   300001  0C                 	db	12
+  1574                           
+  1575                           ;Config register CONFIG2L @ 0x300002
+  1576                           ;	Power-up Timer Enable bit
+  1577                           ;	PWRT = OFF, PWRT disabled
+  1578                           ;	Brown-out Reset Enable bits
+  1579                           ;	BOR = OFF, Brown-out Reset disabled in hardware and software
+  1580                           ;	Brown-out Reset Voltage bits
+  1581                           ;	BORV = 3, Minimum setting 2.05V
+  1582                           ;	USB Voltage Regulator Enable bit
+  1583                           ;	VREGEN = OFF, USB voltage regulator disabled
+  1584   300002                     	org	3145730
+  1585   300002  19                 	db	25
+  1586                           
+  1587                           ;Config register CONFIG2H @ 0x300003
+  1588                           ;	Watchdog Timer Enable bit
+  1589                           ;	WDT = OFF, WDT disabled (control is placed on the SWDTEN bit)
+  1590                           ;	Watchdog Timer Postscale Select bits
+  1591                           ;	WDTPS = 32768, 1:32768
+  1592   300003                     	org	3145731
+  1593   300003  1E                 	db	30
+  1594                           
+  1595                           ; Padding undefined space
+  1596   300004                     	org	3145732
+  1597   300004  FF                 	db	255
+  1598                           
+  1599                           ;Config register CONFIG3H @ 0x300005
+  1600                           ;	CCP2 MUX bit
+  1601                           ;	CCP2MX = ON, CCP2 input/output is multiplexed with RC1
+  1602                           ;	PORTB A/D Enable bit
+  1603                           ;	PBADEN = OFF, PORTB<4:0> pins are configured as digital I/O on Reset
+  1604                           ;	Low-Power Timer 1 Oscillator Enable bit
+  1605                           ;	LPT1OSC = OFF, Timer1 configured for higher power operation
+  1606                           ;	MCLR Pin Enable bit
+  1607                           ;	MCLRE = ON, MCLR pin enabled; RE3 input pin disabled
+  1608   300005                     	org	3145733
+  1609   300005  81                 	db	129
+  1610                           
+  1611                           ;Config register CONFIG4L @ 0x300006
+  1612                           ;	Stack Full/Underflow Reset Enable bit
+  1613                           ;	STVREN = OFF, Stack full/underflow will not cause Reset
+  1614                           ;	Single-Supply ICSP Enable bit
+  1615                           ;	LVP = OFF, Single-Supply ICSP disabled
+  1616                           ;	Dedicated In-Circuit Debug/Programming Port (ICPORT) Enable bit
+  1617                           ;	ICPRT = OFF, ICPORT disabled
+  1618                           ;	Extended Instruction Set Enable bit
+  1619                           ;	XINST = OFF, Instruction set extension and Indexed Addressing mode disabled (Legacy mo
+      +                          de)
+  1620                           ;	Background Debugger Enable bit
+  1621                           ;	DEBUG = 0x1, unprogrammed default
+  1622   300006                     	org	3145734
+  1623   300006  80                 	db	128
+  1624                           
+  1625                           ; Padding undefined space
+  1626   300007                     	org	3145735
+  1627   300007  FF                 	db	255
+  1628                           
+  1629                           ;Config register CONFIG5L @ 0x300008
+  1630                           ;	Code Protection bit
+  1631                           ;	CP0 = OFF, Block 0 (000800-001FFFh) is not code-protected
+  1632                           ;	Code Protection bit
+  1633                           ;	CP1 = OFF, Block 1 (002000-003FFFh) is not code-protected
+  1634                           ;	Code Protection bit
+  1635                           ;	CP2 = OFF, Block 2 (004000-005FFFh) is not code-protected
+  1636                           ;	Code Protection bit
+  1637                           ;	CP3 = OFF, Block 3 (006000-007FFFh) is not code-protected
+  1638   300008                     	org	3145736
+  1639   300008  0F                 	db	15
+  1640                           
+  1641                           ;Config register CONFIG5H @ 0x300009
+  1642                           ;	Boot Block Code Protection bit
+  1643                           ;	CPB = OFF, Boot block (000000-0007FFh) is not code-protected
+  1644                           ;	Data EEPROM Code Protection bit
+  1645                           ;	CPD = OFF, Data EEPROM is not code-protected
+  1646   300009                     	org	3145737
+  1647   300009  C0                 	db	192
+  1648                           
+  1649                           ;Config register CONFIG6L @ 0x30000A
+  1650                           ;	Write Protection bit
+  1651                           ;	WRT0 = OFF, Block 0 (000800-001FFFh) is not write-protected
+  1652                           ;	Write Protection bit
+  1653                           ;	WRT1 = OFF, Block 1 (002000-003FFFh) is not write-protected
+  1654                           ;	Write Protection bit
+  1655                           ;	WRT2 = OFF, Block 2 (004000-005FFFh) is not write-protected
+  1656                           ;	Write Protection bit
+  1657                           ;	WRT3 = OFF, Block 3 (006000-007FFFh) is not write-protected
+  1658   30000A                     	org	3145738
+  1659   30000A  0F                 	db	15
+  1660                           
+  1661                           ;Config register CONFIG6H @ 0x30000B
+  1662                           ;	Configuration Register Write Protection bit
+  1663                           ;	WRTC = OFF, Configuration registers (300000-3000FFh) are not write-protected
+  1664                           ;	Boot Block Write Protection bit
+  1665                           ;	WRTB = OFF, Boot block (000000-0007FFh) is not write-protected
+  1666                           ;	Data EEPROM Write Protection bit
+  1667                           ;	WRTD = OFF, Data EEPROM is not write-protected
+  1668   30000B                     	org	3145739
+  1669   30000B  E0                 	db	224
+  1670                           
+  1671                           ;Config register CONFIG7L @ 0x30000C
+  1672                           ;	Table Read Protection bit
+  1673                           ;	EBTR0 = OFF, Block 0 (000800-001FFFh) is not protected from table reads executed in ot
+      +                          her blocks
+  1674                           ;	Table Read Protection bit
+  1675                           ;	EBTR1 = OFF, Block 1 (002000-003FFFh) is not protected from table reads executed in ot
+      +                          her blocks
+  1676                           ;	Table Read Protection bit
+  1677                           ;	EBTR2 = OFF, Block 2 (004000-005FFFh) is not protected from table reads executed in ot
+      +                          her blocks
+  1678                           ;	Table Read Protection bit
+  1679                           ;	EBTR3 = OFF, Block 3 (006000-007FFFh) is not protected from table reads executed in ot
+      +                          her blocks
+  1680   30000C                     	org	3145740
+  1681   30000C  0F                 	db	15
+  1682                           
+  1683                           ;Config register CONFIG7H @ 0x30000D
+  1684                           ;	Boot Block Table Read Protection bit
+  1685                           ;	EBTRB = OFF, Boot block (000000-0007FFh) is not protected from table reads executed in
+      +                           other blocks
+  1686   30000D                     	org	3145741
+  1687   30000D  40                 	db	64
+  1688                           tosu	equ	0xFFF
+  1689                           tosh	equ	0xFFE
+  1690                           tosl	equ	0xFFD
+  1691                           stkptr	equ	0xFFC
+  1692                           pclatu	equ	0xFFB
+  1693                           pclath	equ	0xFFA
+  1694                           pcl	equ	0xFF9
+  1695                           tblptru	equ	0xFF8
+  1696                           tblptrh	equ	0xFF7
+  1697                           tblptrl	equ	0xFF6
+  1698                           tablat	equ	0xFF5
+  1699                           prodh	equ	0xFF4
+  1700                           prodl	equ	0xFF3
+  1701                           indf0	equ	0xFEF
+  1702                           postinc0	equ	0xFEE
+  1703                           postdec0	equ	0xFED
+  1704                           preinc0	equ	0xFEC
+  1705                           plusw0	equ	0xFEB
+  1706                           fsr0h	equ	0xFEA
+  1707                           fsr0l	equ	0xFE9
+  1708                           wreg	equ	0xFE8
+  1709                           indf1	equ	0xFE7
+  1710                           postinc1	equ	0xFE6
+  1711                           postdec1	equ	0xFE5
+  1712                           preinc1	equ	0xFE4
+  1713                           plusw1	equ	0xFE3
+  1714                           fsr1h	equ	0xFE2
+  1715                           fsr1l	equ	0xFE1
+  1716                           bsr	equ	0xFE0
+  1717                           indf2	equ	0xFDF
+  1718                           postinc2	equ	0xFDE
+  1719                           postdec2	equ	0xFDD
+  1720                           preinc2	equ	0xFDC
+  1721                           plusw2	equ	0xFDB
+  1722                           fsr2h	equ	0xFDA
+  1723                           fsr2l	equ	0xFD9
+  1724                           status	equ	0xFD8
+
+Data Sizes:
+    Strings     0
+    Constant    776
+    Data        1
+    BSS         1
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMRAM           95     17      19
+    BANK0           160      0       0
+    BANK1           256      0       0
+    BANK2           256      0       0
+    BANK3           256      0       0
+    BANK4           256      0       0
+    BANK5           256      0       0
+    BANK6           256      0       0
+    BANK7           256      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMRAM
+
+    _main->_MAX7219_Init
+    _MAX7219_Init->_MAX7219_Config
+    _MAX7219_Config->_MAX7219_Tx
+    _MAX7219_Tx->_SPI_SOFT_TX
+    _MAX7219_No_OP->_SPI_SOFT_TX
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK4
+
+    None.
+
+Critical Paths under _main in BANK5
+
+    None.
+
+Critical Paths under _main in BANK6
+
+    None.
+
+Critical Paths under _main in BANK7
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 6     6      0    2443
+                                             11 COMRAM     6     6      0
+                       _MAX7219_Init
+                         _MAX7219_Tx
+ ---------------------------------------------------------------------------------
+ (1) _MAX7219_Init                                         1     1      0    1254
+                                             10 COMRAM     1     1      0
+                     _MAX7219_Config
+                      _SPI_SOFT_INIT
+ ---------------------------------------------------------------------------------
+ (2) _SPI_SOFT_INIT                                        0     0      0       0
+ ---------------------------------------------------------------------------------
+ (2) _MAX7219_Config                                       1     1      0    1209
+                                              9 COMRAM     1     1      0
+                         _MAX7219_Tx
+ ---------------------------------------------------------------------------------
+ (1) _MAX7219_Tx                                           3     1      2    1099
+                                              6 COMRAM     3     1      2
+                      _MAX7219_No_OP
+                        _SPI_SOFT_TX
+ ---------------------------------------------------------------------------------
+ (2) _MAX7219_No_OP                                        0     0      0      60
+                        _SPI_SOFT_TX
+ ---------------------------------------------------------------------------------
+ (2) _SPI_SOFT_TX                                          6     6      0      60
+                                              0 COMRAM     6     6      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 2
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _MAX7219_Init
+     _MAX7219_Config
+       _MAX7219_Tx
+         _MAX7219_No_OP
+           _SPI_SOFT_TX
+         _SPI_SOFT_TX
+     _SPI_SOFT_INIT
+   _MAX7219_Tx
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BIGRAM             7FF      0       0      25        0.0%
+EEDATA             100      0       0       0        0.0%
+BITBANK7           100      0       0      18        0.0%
+BANK7              100      0       0      19        0.0%
+BITBANK6           100      0       0      16        0.0%
+BANK6              100      0       0      17        0.0%
+BITBANK5           100      0       0      14        0.0%
+BANK5              100      0       0      15        0.0%
+BITBANK4           100      0       0      12        0.0%
+BANK4              100      0       0      13        0.0%
+BITBANK3           100      0       0      10        0.0%
+BANK3              100      0       0      11        0.0%
+BITBANK2           100      0       0       8        0.0%
+BANK2              100      0       0       9        0.0%
+BITBANK1           100      0       0       6        0.0%
+BANK1              100      0       0       7        0.0%
+BITBANK0            A0      0       0       4        0.0%
+BANK0               A0      0       0       5        0.0%
+BITCOMRAM           5F      0       0       0        0.0%
+COMRAM              5F     11      13       1       20.0%
+BITBIGSFRh          3E      0       0      20        0.0%
+BITBIGSFRlh         2B      0       0      21        0.0%
+BITBIGSFRlll        23      0       0      23        0.0%
+BITBIGSFRllh        11      0       0      22        0.0%
+BIGSFR               0      0       0     200        0.0%
+BITSFR               0      0       0     200        0.0%
+SFR                  0      0       0     200        0.0%
+STACK                0      0       0       2        0.0%
+NULL                 0      0       0       0        0.0%
+ABS                  0      0      13      24        0.0%
+DATA                 0      0      13       3        0.0%
+CODE                 0      0       0       0        0.0%
+
+
+Microchip Technology PIC18 Macro Assembler V2.40 build 20220703182018 
+Symbol Table                                                                                   Fri Dec 23 16:20:24 2022
+
+                      _i 0012                       l33 7B30                       l36 7C00  
+                     l61 7B80                       l38 7C50                       l70 7BAE  
+                     l64 7BF8                       l73 7B3E                       l69 7BAC  
+                     u20 7C30                       u21 7C28                       u14 7C18  
+                     u15 7C12                       u40 7C50                       u41 7C4C  
+                     u38 7C32                      l831 7B96                      l761 7C40  
+                    l833 7B98                      l841 7B68                      l755 7C02  
+                    l763 7B32                      l835 7B9C                      l827 7B84  
+                    l843 7B6A                      l851 7C5C                      l757 7C3C  
+                    l749 7BFC                      l829 7B86                      l837 7BB2  
+                    l845 7B70                      l759 7C3E                      l775 7B28  
+                    l839 7B60                      l871 7CDC                      l863 7C68  
+                    l847 7C52                      l865 7CA4                      l857 7C60  
+                    l849 7C56                      l867 7CA8                      l869 7CC4  
+                    u120 7BAC                      u121 7BA8                      u130 7B80  
+                    u131 7B7C                      u140 7CC4                      u141 7CC0  
+                    u150 7CEE                      u151 7CEA                      u167 7CCE  
+                    prod 000FF3                      wreg 000FE8             SPI_SOFT_TX@j 0006  
+                   _main 7C52       MAX7219_Tx@matrices 0008                     prodl 000FF3  
+                   start 0000             ___param_bank 000000                    ?_main 0001  
+        ??_SPI_SOFT_INIT 0001                    main@j 0010                    tablat 000FF5  
+   __end_of_MAX7219_Init 7B82                    status 000FD8          __initialization 7B40  
+           __end_of_main 7CF6                   ??_main 000C            __activetblptr 000002  
+                 _ADCON1 000FC1           SPI_SOFT_TX@cmd 0005                   isa$std 000001  
+                 _symbol 7CF7             __pdataCOMRAM 0013             __mediumconst 7CF6  
+                 tblptrh 000FF7                   tblptrl 000FF6                   tblptru 000FF8  
+  __end_of_MAX7219_No_OP 7B40             ??_MAX7219_Tx 0009             ?_SPI_SOFT_TX 0001  
+             __accesstop 0060  __end_of__initialization 7B54            ___rparam_used 000001  
+         __pcstackCOMRAM 0001       __end_of_MAX7219_Tx 7BB0             _MAX7219_Init 7B5E  
+         MAX7219_Tx@dato 0007               _n_matrices 0013                  __Hparam 0000  
+                __Lparam 0000           _MAX7219_Config 7BB0                  __pcinit 7B40  
+                __ramtop 0800                  __ptext0 7C52                  __ptext1 7B5E  
+                __ptext2 7B28                  __ptext3 7BB0                  __ptext4 7B82  
+                __ptext5 7B32                  __ptext6 7BFA     end_of_initialization 7B54  
+  __end_of_SPI_SOFT_INIT 7B32            __Lmediumconst 7CF6   __end_of_MAX7219_Config 7BFA  
+              _PORTDbits 000F83                _TRISDbits 000F95          ?_MAX7219_Config 0001  
+          __pidataCOMRAM 7B27           __end_of_symbol 7FFF      start_initialization 7B40  
+            __pbssCOMRAM 0012            __pmediumconst 7CF6            MAX7219_Tx@dir 0009  
+          _MAX7219_No_OP 7B32           ?_MAX7219_No_OP 0001            ??_SPI_SOFT_TX 0001  
+ MAX7219_Config@matrices 000A         ??_MAX7219_Config 000A                 __Hrparam 0000  
+               __Lrparam 0000               _MAX7219_Tx 7B82      __end_of_SPI_SOFT_TX 7C52  
+               isa$xinst 000000            ?_MAX7219_Init 0001          ??_MAX7219_No_OP 0007  
+ MAX7219_Init@n_matrices 000B            _SPI_SOFT_INIT 7B28           ??_MAX7219_Init 000B  
+            ?_MAX7219_Tx 0007           ?_SPI_SOFT_INIT 0001              _SPI_SOFT_TX 7BFA  
