@@ -6287,11 +6287,11 @@ void tmr2_init(void);
 void __attribute__((picinterrupt(("")))) interrupts() {
 
     if (INTCONbits.INT0IF) {
-# 34 "main.c"
         LATDbits.LATD0 = 0;
         PR2 = cargaTimer;
         PIR1bits.TMR2IF = 0;
         PIE1bits.TMR2IE = 1;
+        T2CONbits.TMR2ON = 1;
         INTCONbits.INT0IF = 0;
     }
 
@@ -6301,6 +6301,7 @@ void __attribute__((picinterrupt(("")))) interrupts() {
         LATDbits.LATD0 = 0;
         PIR1bits.TMR2IF = 0;
         PIE1bits.TMR2IE = 0;
+        T2CONbits.TMR2ON = 0;
     }
 }
 
@@ -6359,5 +6360,5 @@ void tmr2_init(void) {
 
     PIR1bits.TMR2IF = 0;
     PIE1bits.TMR2IE = 0;
-    T2CONbits.TMR2ON = 1;
+    T2CONbits.TMR2ON = 0;
 }

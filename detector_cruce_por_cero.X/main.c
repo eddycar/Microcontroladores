@@ -22,19 +22,11 @@ void tmr2_init(void);
 void __interrupt() interrupts() {
     // zero crossing interrupt 
     if (INTCONbits.INT0IF) {
-        //        tiempo = angulo * (16.67 / 2.0) / 360.0;
-        //        for (int i = 0; i < tiempo; i++) {
-        //            __delay_ms(1);
-        //        }
-        //
-        //        PORTDbits.RD0 = 1;
-        //        __delay_ms(1);
-        //        PORTDbits.RD0 = 0;
-        //   PR2 = 250;
         PULSO = 0;
         PR2 = cargaTimer; // carga el tiempo a temporizar en el timer2
         PIR1bits.TMR2IF = 0; // limpia bandera timer2
         PIE1bits.TMR2IE = 1; // activa interrupcion de timer cero
+        T2CONbits.TMR2ON = 1;
         INTCONbits.INT0IF = 0; // external interrupt flag is cleared
     }
     // Timer2 Interrupt
@@ -44,13 +36,14 @@ void __interrupt() interrupts() {
         PULSO = 0;
         PIR1bits.TMR2IF = 0; // limpia bandera timer2
         PIE1bits.TMR2IE = 0; // desactiva interrupcion de timer cero
+        T2CONbits.TMR2ON = 0;
     }
 }
 
 void main(void) {
     ADCON1 = 0x0E;
     TRISBbits.RB0 = 1; // Entrada señal de cruce por cero 
-    TRISDbits.RD0 = 0; // 
+    TRISDbits.RD0 = 0; // Salida Triac
     PULSO = 0; // PULSO corresponde a LATDbits.LATD1
 
     //led de prueba 
@@ -77,13 +70,13 @@ void main(void) {
 //        sprintf(buffer, "Adc value: %d\r\n", adcValue);
 //        UART_Write_Text(buffer);
         valorAnguloDisparo = adcValue * 0.097656;
-//        sprintf(buffer, "Angulo disp: %.3f\r\n", valorAnguloDisparo);
+//        sprintf(buffer, "Angulo disp: %.2f\r\n", valorAnguloDisparo);
 //        UART_Write_Text(buffer);
         if (valorAnguloDisparo <= 5) {
-            INTCONbits.INT0IE = 0; // External interrupt is enable
+            INTCONbits.INT0IE = 0; // External interrupt is disable
             PULSO = 0; // apaga la carga
         } else if (valorAnguloDisparo >= 95) {
-            INTCONbits.INT0IE = 0; // External interrupt is enable
+            INTCONbits.INT0IE = 0; // External interrupt is disable
             PULSO = 1; // Mantiene encendida la carga
         } else {
             cargaTimer = round(valorAnguloDisparo * 2.6); // Expresión obtenida a partir del archivo excel cruce por cero
@@ -99,8 +92,8 @@ void main(void) {
 void tmr2_init(void) {
     T2CONbits.T2CKPS = 0b01; //Prescale 1:4
     T2CONbits.TOUTPS = 0b0111; // Postcale 1:8
-    //    //Timer 2 interrups 
+    //Timer 2 interrups 
     PIR1bits.TMR2IF = 0;
     PIE1bits.TMR2IE = 0;
-    T2CONbits.TMR2ON = 1;
+    T2CONbits.TMR2ON = 0;
 }

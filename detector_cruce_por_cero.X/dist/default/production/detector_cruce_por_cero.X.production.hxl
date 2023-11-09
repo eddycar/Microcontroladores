@@ -11,13 +11,13 @@
  Intel Hex-file ranges:
   0h - 3h		(dist/default/production\detector_cruce_por_cero.X.production.hex)
   8h - 11h		(dist/default/production\detector_cruce_por_cero.X.production.hex)
-  800h - 1B3Bh		(dist/default/production\detector_cruce_por_cero.X.production.hex)
+  800h - 1B3Fh		(dist/default/production\detector_cruce_por_cero.X.production.hex)
   200000h - 200007h		(dist/default/production\detector_cruce_por_cero.X.production.hex)
   300000h - 30000Dh		(dist/default/production\detector_cruce_por_cero.X.production.hex)
  Unused ranges:
   4h - 7h
   12h - 7FFh
-  1B3Ch - 1FFFFFh
+  1B40h - 1FFFFFh
   200008h - 2FFFFFh
 
 ### Hex Memory Map ###
@@ -337,7 +337,7 @@
 00001B00 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00001B10 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00001B20 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00001B30 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 -- -- -- --
+00001B30 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 ----------------------------------------------------------
 00200000 | H1 H1 H1 H1 H1 H1 H1 H1 -- -- -- -- -- -- -- --
 ----------------------------------------------------------

@@ -128,6 +128,25 @@ Version 4.0 HI-TECH Software Intermediate Code
 "4409
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 4409: extern volatile PIE1bits_t PIE1bits __attribute__((address(0xF9D)));
 [v _PIE1bits `VS174 ~T0 @X0 0 e@3997 ]
+"7207
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 7207:     struct {
+[s S301 :2 `uc 1 :1 `uc 1 :4 `uc 1 ]
+[n S301 . T2CKPS TMR2ON TOUTPS ]
+"7212
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 7212:     struct {
+[s S302 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S302 . T2CKPS0 T2CKPS1 . T2OUTPS0 T2OUTPS1 T2OUTPS2 T2OUTPS3 ]
+"7221
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 7221:     struct {
+[s S303 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S303 . . TOUTPS0 TOUTPS1 TOUTPS2 TOUTPS3 ]
+"7206
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 7206: typedef union {
+[u S300 `S301 1 `S302 1 `S303 1 ]
+[n S300 . . . . ]
+"7229
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 7229: extern volatile T2CONbits_t T2CONbits __attribute__((address(0xFCA)));
+[v _T2CONbits `VS300 ~T0 @X0 0 e@4042 ]
 [v F192 `(v ~T0 @X0 1 tf1`ul ]
 "12 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\builtins.h
 [v __delay `JF192 ~T0 @X0 0 e ]
@@ -191,25 +210,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "348 C:\Program Files\Microchip\xc8\v2.40\pic\include\c99\math.h
 [; ;C:\Program Files\Microchip\xc8\v2.40\pic\include\c99\math.h: 348: float roundf(float);
 [v _roundf `(f ~T0 @X0 0 ef1`f ]
-"7207 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 7207:     struct {
-[s S301 :2 `uc 1 :1 `uc 1 :4 `uc 1 ]
-[n S301 . T2CKPS TMR2ON TOUTPS ]
-"7212
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 7212:     struct {
-[s S302 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S302 . T2CKPS0 T2CKPS1 . T2OUTPS0 T2OUTPS1 T2OUTPS2 T2OUTPS3 ]
-"7221
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 7221:     struct {
-[s S303 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S303 . . TOUTPS0 TOUTPS1 TOUTPS2 TOUTPS3 ]
-"7206
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 7206: typedef union {
-[u S300 `S301 1 `S302 1 `S303 1 ]
-[n S300 . . . . ]
-"7229
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 7229: extern volatile T2CONbits_t T2CONbits __attribute__((address(0xFCA)));
-[v _T2CONbits `VS300 ~T0 @X0 0 e@4042 ]
 "55 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 55: __asm("SPPDATA equ 0F62h");
 [; <" SPPDATA equ 0F62h ;# ">
@@ -819,186 +819,192 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 24:     if (INTCONbits.INT0IF) {
 [e $ ! != -> . . _INTCONbits 0 1 `i -> 0 `i 375  ]
 {
-"34
-[; ;main.c: 34:         LATDbits.LATD0 = 0;
+"25
+[; ;main.c: 25:         LATDbits.LATD0 = 0;
 [e = . . _LATDbits 0 0 -> -> 0 `i `uc ]
-"35
-[; ;main.c: 35:         PR2 = cargaTimer;
+"26
+[; ;main.c: 26:         PR2 = cargaTimer;
 [e = _PR2 -> _cargaTimer `uc ]
-"36
-[; ;main.c: 36:         PIR1bits.TMR2IF = 0;
+"27
+[; ;main.c: 27:         PIR1bits.TMR2IF = 0;
 [e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
-"37
-[; ;main.c: 37:         PIE1bits.TMR2IE = 1;
+"28
+[; ;main.c: 28:         PIE1bits.TMR2IE = 1;
 [e = . . _PIE1bits 0 1 -> -> 1 `i `uc ]
-"38
-[; ;main.c: 38:         INTCONbits.INT0IF = 0;
+"29
+[; ;main.c: 29:         T2CONbits.TMR2ON = 1;
+[e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
+"30
+[; ;main.c: 30:         INTCONbits.INT0IF = 0;
 [e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
-"39
-[; ;main.c: 39:     }
+"31
+[; ;main.c: 31:     }
 }
 [e :U 375 ]
-"41
-[; ;main.c: 41:     if (PIR1bits.TMR2IF) {
+"33
+[; ;main.c: 33:     if (PIR1bits.TMR2IF) {
 [e $ ! != -> . . _PIR1bits 0 1 `i -> 0 `i 376  ]
 {
-"42
-[; ;main.c: 42:         LATDbits.LATD0 = 1;
+"34
+[; ;main.c: 34:         LATDbits.LATD0 = 1;
 [e = . . _LATDbits 0 0 -> -> 1 `i `uc ]
-"43
-[; ;main.c: 43:         _delay((unsigned long)((10)*(4000000L/4000000.0)));
+"35
+[; ;main.c: 35:         _delay((unsigned long)((10)*(4000000L/4000000.0)));
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
-"44
-[; ;main.c: 44:         LATDbits.LATD0 = 0;
+"36
+[; ;main.c: 36:         LATDbits.LATD0 = 0;
 [e = . . _LATDbits 0 0 -> -> 0 `i `uc ]
-"45
-[; ;main.c: 45:         PIR1bits.TMR2IF = 0;
+"37
+[; ;main.c: 37:         PIR1bits.TMR2IF = 0;
 [e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
-"46
-[; ;main.c: 46:         PIE1bits.TMR2IE = 0;
+"38
+[; ;main.c: 38:         PIE1bits.TMR2IE = 0;
 [e = . . _PIE1bits 0 1 -> -> 0 `i `uc ]
-"47
-[; ;main.c: 47:     }
+"39
+[; ;main.c: 39:         T2CONbits.TMR2ON = 0;
+[e = . . _T2CONbits 0 1 -> -> 0 `i `uc ]
+"40
+[; ;main.c: 40:     }
 }
 [e :U 376 ]
-"48
-[; ;main.c: 48: }
+"41
+[; ;main.c: 41: }
 [e :UE 374 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"50
-[; ;main.c: 50: void main(void) {
+"43
+[; ;main.c: 43: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"51
-[; ;main.c: 51:     ADCON1 = 0x0E;
+"44
+[; ;main.c: 44:     ADCON1 = 0x0E;
 [e = _ADCON1 -> -> 14 `i `uc ]
-"52
-[; ;main.c: 52:     TRISBbits.RB0 = 1;
+"45
+[; ;main.c: 45:     TRISBbits.RB0 = 1;
 [e = . . _TRISBbits 1 0 -> -> 1 `i `uc ]
-"53
-[; ;main.c: 53:     TRISDbits.RD0 = 0;
+"46
+[; ;main.c: 46:     TRISDbits.RD0 = 0;
 [e = . . _TRISDbits 1 0 -> -> 0 `i `uc ]
-"54
-[; ;main.c: 54:     LATDbits.LATD0 = 0;
+"47
+[; ;main.c: 47:     LATDbits.LATD0 = 0;
 [e = . . _LATDbits 0 0 -> -> 0 `i `uc ]
-"57
-[; ;main.c: 57:     TRISDbits.RD1 = 0;
+"50
+[; ;main.c: 50:     TRISDbits.RD1 = 0;
 [e = . . _TRISDbits 1 1 -> -> 0 `i `uc ]
-"58
-[; ;main.c: 58:     LATDbits.LATD1 = 0;
+"51
+[; ;main.c: 51:     LATDbits.LATD1 = 0;
 [e = . . _LATDbits 0 1 -> -> 0 `i `uc ]
-"61
-[; ;main.c: 61:     INTCONbits.GIE = 1;
+"54
+[; ;main.c: 54:     INTCONbits.GIE = 1;
 [e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-"62
-[; ;main.c: 62:     INTCONbits.PEIE = 1;
+"55
+[; ;main.c: 55:     INTCONbits.PEIE = 1;
 [e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
-"65
-[; ;main.c: 65:     INTCONbits.INT0IF = 0;
+"58
+[; ;main.c: 58:     INTCONbits.INT0IF = 0;
 [e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
-"66
-[; ;main.c: 66:     INTCONbits.INT0IE = 1;
+"59
+[; ;main.c: 59:     INTCONbits.INT0IE = 1;
 [e = . . _INTCONbits 0 4 -> -> 1 `i `uc ]
-"67
-[; ;main.c: 67:     INTCON2bits.INTEDG0 = 1;
+"60
+[; ;main.c: 60:     INTCON2bits.INTEDG0 = 1;
 [e = . . _INTCON2bits 1 6 -> -> 1 `i `uc ]
-"69
-[; ;main.c: 69:     tmr2_init();
+"62
+[; ;main.c: 62:     tmr2_init();
 [e ( _tmr2_init ..  ]
-"71
-[; ;main.c: 71:     ADC_Init(2, 4);
+"64
+[; ;main.c: 64:     ADC_Init(2, 4);
 [e ( _ADC_Init (2 , -> 2 `i -> 4 `i ]
-"75
-[; ;main.c: 75:     while (1) {
+"68
+[; ;main.c: 68:     while (1) {
 [e :U 379 ]
 {
-"76
-[; ;main.c: 76:         adcValue = ADC_Read(0);
+"69
+[; ;main.c: 69:         adcValue = ADC_Read(0);
 [e = _adcValue ( _ADC_Read (1 -> -> 0 `i `uc ]
-"79
-[; ;main.c: 79:         valorAnguloDisparo = adcValue * 0.097656;
+"72
+[; ;main.c: 72:         valorAnguloDisparo = adcValue * 0.097656;
 [e = _valorAnguloDisparo -> * -> _adcValue `d .0.097656 `f ]
-"82
-[; ;main.c: 82:         if (valorAnguloDisparo <= 5) {
+"75
+[; ;main.c: 75:         if (valorAnguloDisparo <= 5) {
 [e $ ! <= _valorAnguloDisparo -> -> 5 `i `f 381  ]
 {
-"83
-[; ;main.c: 83:             INTCONbits.INT0IE = 0;
+"76
+[; ;main.c: 76:             INTCONbits.INT0IE = 0;
 [e = . . _INTCONbits 0 4 -> -> 0 `i `uc ]
-"84
-[; ;main.c: 84:             LATDbits.LATD0 = 0;
+"77
+[; ;main.c: 77:             LATDbits.LATD0 = 0;
 [e = . . _LATDbits 0 0 -> -> 0 `i `uc ]
-"85
-[; ;main.c: 85:         } else if (valorAnguloDisparo >= 95) {
+"78
+[; ;main.c: 78:         } else if (valorAnguloDisparo >= 95) {
 }
 [e $U 382  ]
 [e :U 381 ]
 [e $ ! >= _valorAnguloDisparo -> -> 95 `i `f 383  ]
 {
-"86
-[; ;main.c: 86:             INTCONbits.INT0IE = 0;
+"79
+[; ;main.c: 79:             INTCONbits.INT0IE = 0;
 [e = . . _INTCONbits 0 4 -> -> 0 `i `uc ]
-"87
-[; ;main.c: 87:             LATDbits.LATD0 = 1;
+"80
+[; ;main.c: 80:             LATDbits.LATD0 = 1;
 [e = . . _LATDbits 0 0 -> -> 1 `i `uc ]
-"88
-[; ;main.c: 88:         } else {
+"81
+[; ;main.c: 81:         } else {
 }
 [e $U 384  ]
 [e :U 383 ]
 {
-"89
-[; ;main.c: 89:             cargaTimer = roundf(valorAnguloDisparo * 2.6);
+"82
+[; ;main.c: 82:             cargaTimer = roundf(valorAnguloDisparo * 2.6);
 [e = _cargaTimer -> ( _roundf (1 -> * -> _valorAnguloDisparo `d .2.6 `f `i ]
-"90
-[; ;main.c: 90:             INTCONbits.INT0IE = 1;
+"83
+[; ;main.c: 83:             INTCONbits.INT0IE = 1;
 [e = . . _INTCONbits 0 4 -> -> 1 `i `uc ]
-"93
-[; ;main.c: 93:         }
+"86
+[; ;main.c: 86:         }
 }
 [e :U 384 ]
 [e :U 382 ]
-"94
-[; ;main.c: 94:         _delay((unsigned long)((100)*(4000000L/4000.0)));
+"87
+[; ;main.c: 87:         _delay((unsigned long)((100)*(4000000L/4000.0)));
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"95
-[; ;main.c: 95:     }
+"88
+[; ;main.c: 88:     }
 }
 [e :U 378 ]
 [e $U 379  ]
 [e :U 380 ]
-"96
-[; ;main.c: 96:     return;
+"89
+[; ;main.c: 89:     return;
 [e $UE 377  ]
-"97
-[; ;main.c: 97: }
+"90
+[; ;main.c: 90: }
 [e :UE 377 ]
 }
-"99
-[; ;main.c: 99: void tmr2_init(void) {
+"92
+[; ;main.c: 92: void tmr2_init(void) {
 [v _tmr2_init `(v ~T0 @X0 1 ef ]
 {
 [e :U _tmr2_init ]
 [f ]
-"100
-[; ;main.c: 100:     T2CONbits.T2CKPS = 0b01;
+"93
+[; ;main.c: 93:     T2CONbits.T2CKPS = 0b01;
 [e = . . _T2CONbits 0 0 -> -> 1 `i `uc ]
-"101
-[; ;main.c: 101:     T2CONbits.TOUTPS = 0b0111;
+"94
+[; ;main.c: 94:     T2CONbits.TOUTPS = 0b0111;
 [e = . . _T2CONbits 0 2 -> -> 7 `i `uc ]
-"103
-[; ;main.c: 103:     PIR1bits.TMR2IF = 0;
+"96
+[; ;main.c: 96:     PIR1bits.TMR2IF = 0;
 [e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
-"104
-[; ;main.c: 104:     PIE1bits.TMR2IE = 0;
+"97
+[; ;main.c: 97:     PIE1bits.TMR2IE = 0;
 [e = . . _PIE1bits 0 1 -> -> 0 `i `uc ]
-"105
-[; ;main.c: 105:     T2CONbits.TMR2ON = 1;
-[e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
-"106
-[; ;main.c: 106: }
+"98
+[; ;main.c: 98:     T2CONbits.TMR2ON = 0;
+[e = . . _T2CONbits 0 1 -> -> 0 `i `uc ]
+"99
+[; ;main.c: 99: }
 [e :UE 385 ]
 }
